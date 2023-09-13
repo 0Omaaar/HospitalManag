@@ -9,8 +9,30 @@
 							<h4 class="content-title mb-0 my-auto">Utilities</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ Margin</span>
 						</div>
 					</div>
-					<div class="d-flex my-auto breadcrumb-right">
-						<button class="btn btn-outline-primary mr-3"><span class="icon-label"><i class="fa fa-envelope"></i></span> <span class="btn-text">Email</span></button> <button class="btn btn-outline-danger mr-3"><span class="icon-label"><i class="fa fa-print"></i></span> <span class="btn-text">Print</span></button> <button class="btn btn-success mr-3"><span class="icon-label"><i class="fa fa-download"></i></span> <span class="btn-text">Export</span></button>
+					<div class="d-flex my-xl-auto right-content">
+						<div class="pr-1 mb-3 mb-xl-0">
+							<button type="button" class="btn btn-info btn-icon mr-2"><i class="mdi mdi-filter-variant"></i></button>
+						</div>
+						<div class="pr-1 mb-3 mb-xl-0">
+							<button type="button" class="btn btn-danger btn-icon mr-2"><i class="mdi mdi-star"></i></button>
+						</div>
+						<div class="pr-1 mb-3 mb-xl-0">
+							<button type="button" class="btn btn-warning  btn-icon mr-2"><i class="mdi mdi-refresh"></i></button>
+						</div>
+						<div class="mb-3 mb-xl-0">
+							<div class="btn-group dropdown">
+								<button type="button" class="btn btn-primary">14 Aug 2019</button>
+								<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuDate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="sr-only">Toggle Dropdown</span>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate" data-x-placement="bottom-end">
+									<a class="dropdown-item" href="#">2015</a>
+									<a class="dropdown-item" href="#">2016</a>
+									<a class="dropdown-item" href="#">2017</a>
+									<a class="dropdown-item" href="#">2018</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- breadcrumb -->
@@ -23,20 +45,19 @@
 						<div class="card">
 							<div class="card-body">
 								<div class="main-content-label mg-b-5">
-									Margin Values
+									Margin-top Values
 								</div>
 								<p class="mg-b-20">It is Very Easy to Customize and it uses in website apllication.</p>
 								<div class="d-flex">
-									<div class="wd-150 ht-80 bg-gray-400"></div>
-									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-l-20">
-										.mg-l-20
+									<div class="wd-150 ht-80 bg-gray-400 mr-3"></div>
+									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-t-20 mr-3">
+										.mg-t-20
 									</div>
-									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-l-40">
-										.mg-l-40
+									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-t-40 mr-3">
+										.mg-t-40
 									</div>
 								</div>
-								<h6 class="mg-t-25 mb-0">Margin-top Values</h6>
-								<div class="table-responsive">
+								<div class="table-responsive mt-3">
 									<table class="table main-table-reference text-nowrap mg-t-10 mb-0">
 										<tbody>
 											<tr>
@@ -50,8 +71,25 @@
 										</tbody>
 									</table>
 								</div>
-								<h6 class="mg-t-25 mb-0">Margin-Left Values</h6>
-								<div class="table-responsive">
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Margin-right Values
+								</div>
+								<p class="mg-b-20">It is Very Easy to Customize and it uses in website apllication.</p>
+								<div class="d-flex">
+									<div class="wd-150 ht-80 bg-gray-400"></div>
+									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-l-20">
+										.mg-l-20
+									</div>
+									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-l-40">
+										.mg-l-40
+									</div>
+								</div>
+								<div class="table-responsive mt-3">
 									<table class="table main-table-reference text-nowrap mg-t-10 mb-0">
 										<tbody>
 											<tr>
@@ -65,8 +103,25 @@
 										</tbody>
 									</table>
 								</div>
-								<h6 class="mg-t-25 mb-0">Margin-right Values</h6>
-								<div class="table-responsive">
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Margin-right Values
+								</div>
+								<p class="mg-b-20">It is Very Easy to Customize and it uses in website apllication.</p>
+								<div class="d-flex">
+									<div class="wd-150 d-flex align-items-center justify-content-center ht-80 bg-gray-400 mg-r-10">.mg-r-20</div>
+									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-r-40">
+										.mg-r-40
+									</div>
+									<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-r-20">
+										.mg-r-20
+									</div>
+								</div>
+								<div class="table-responsive mt-3">
 									<table class="table main-table-reference text-nowrap mg-t-10 mb-0">
 										<tbody>
 											<tr>
@@ -80,8 +135,25 @@
 										</tbody>
 									</table>
 								</div>
-								<h6 class="mg-t-25 mb-0">Margin-bottom Values</h6>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<div class="main-content-label mg-b-5">
+									Margin-bottom Values
+								</div>
+								<p class="mg-b-20">It is Very Easy to Customize and it uses in website apllication.</p>
 								<div class="table-responsive">
+									<div class="d-flex">
+										<div class="wd-150 ht-80 bg-gray-400 mr-3"></div>
+										<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-b-20 mr-3">
+											.mg-b-20
+										</div>
+										<div class="d-flex align-items-center justify-content-center wd-150 ht-80 bg-gray-400 mg-b-40 mr-3">
+											.mg-b-40
+										</div>
+									</div>
 									<table class="table main-table-reference text-nowrap mg-t-10 mb-0">
 										<tbody>
 											<tr>

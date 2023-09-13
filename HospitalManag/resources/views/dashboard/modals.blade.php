@@ -80,7 +80,7 @@
 
 				<!-- row -->
 				<div class="row">
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -90,7 +90,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -100,7 +100,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -110,7 +110,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -120,7 +120,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -130,7 +130,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4">
+					<div class="col-sm-4 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -140,7 +140,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -150,7 +150,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -160,7 +160,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-12 col-lg-4">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>

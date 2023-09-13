@@ -131,7 +131,7 @@
 									</div>
 								</div>
 								<div class="card-footer p-0">
-									<p class="text-muted mb-0 pt-4"><i class="si si-arrow-down-circle text-warning mr-2" aria-hidden="true"></i>Daily Orders</p>
+									<p class="text-muted mb-0 pt-4"><i class="si si-arrow-down-circle text-warning mr-1-20  mr-2" aria-hidden="true"></i>Daily Orders</p>
 								</div>
 							</div>
 						</div>
@@ -1624,7 +1624,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-12 col-lg-6  col-xl-4">
+					<div class="col-md-12 col-lg-6 col-xl-4">
 						<div class="card">
 							<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 								<div class="d-flex justify-content-between">
@@ -1694,7 +1694,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-12 col-lg-6 col-xl-4 col-sm-12">
+					<div class="col-md-12 col-lg-6  col-xl-4 col-sm-12">
 						<div class="card">
 							<div class="card-header">
 								<div class="d-flex justify-content-between">

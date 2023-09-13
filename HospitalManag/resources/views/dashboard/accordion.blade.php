@@ -160,11 +160,11 @@
 												</a>
 											</h4>
 										</div>
-										<div id="collapseTwo2" class="collapse b-b0 bg-white" aria-labelledby="headingTwo" data-parent="#accordion">
+										<div id="collapseTwo2" class="collapse b-b0" aria-labelledby="headingTwo" data-parent="#accordion">
 											<div class="border p-3">
 												<div class="row">
 													<div class="col-lg-3 col-md-6">
-														<img class="img-fluid rounded" src="{{URL::asset('assets/img/photos/8.jpg')}}" alt="banner image">
+														<img class="img-fluid rounded" src="{{URL::asset('assets/img/photos/8.jpg')}} " alt="banner image">
 													</div>
 													<div class="col-lg-3 col-md-6">
 														<img class="img-fluid rounded" src="{{URL::asset('assets/img/photos/10.jpg')}}" alt="banner image ">
@@ -187,7 +187,7 @@
 												</a>
 											</h4>
 										</div>
-										<div id="collapseThree1" class="collapse b-b0 bg-white" aria-labelledby="headingThree" data-parent="#accordion">
+										<div id="collapseThree1" class="collapse b-b0" aria-labelledby="headingThree" data-parent="#accordion">
 											<div class="border p-3">
 												<table class="table mb-0 table-bordered border-top mb-0">
 													<thead>

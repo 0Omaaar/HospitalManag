@@ -140,7 +140,7 @@
 									<img alt="Responsive image" class="img-fit-cover" src="{{URL::asset('assets/img/photos/1.jpg')}}">
 									<figcaption class="pos-absolute a-0 pd-25 bg-black-5 tx-white-8">
 										<h6 class="tx-14 tx-sm-16 tx-white tx-semibold mg-b-15 mg-sm-b-20">What Does Royalty-Free Mean?</h6>
-										<p class="mg-b-0">Royalty free means you just need to pay for rights to use the item once per end product. You don't need to pay additional or ongoing fees for each person who sees or uses it.</p>
+										<p class="mg-b-0">Royalty free means you just need to pay for rights to use the item once per end product. You dont need to pay additional or ongoing fees for each person who sees or uses it.</p>
 									</figcaption>
 								</figure>
 							</div>

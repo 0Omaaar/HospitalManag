@@ -487,7 +487,7 @@
 										<div class="tab-pane" id="default-tab1" role="tabpanel" aria-labelledby="js-tab">
 <!---Prism Pre code-->
 <figure class="highlight mb-0" id="element3"><pre><code class="language-markup"><script type="prismsmix/javascript"><!---Tabs JS-->
-src="{{URL::asset('assets/plugins/tabs/jquery.multipurpose_tabcontent.js')}}"</script></code></pre>
+src="../assets/plugins/tabs/jquery.multipurpose_tabcontent.js"</script></code></pre>
 <div class="clipboard-icon" data-clipboard-target="#element5"><i class="las la-clipboard"></i></div>
 </figure>
 										</div>
@@ -496,7 +496,7 @@ src="{{URL::asset('assets/plugins/tabs/jquery.multipurpose_tabcontent.js')}}"</s
 										<div class="tab-pane" id="default-tab2" role="tabpanel" aria-labelledby="js-tab1">
 <!---Prism Pre code-->
 <figure class="highlight mb-0" id="element4"><pre><code class="language-markup"><script type="prismsmix/javascript"><!---Tabs scripts-->
-src="{{URL::asset('assets/js/tabs.js')}}"</script></code></pre>
+src="../assets/js/tabs.js"</script></code></pre>
 <div class="clipboard-icon" data-clipboard-target="#element5"><i class="las la-clipboard"></i></div>
 </figure>
 										</div>

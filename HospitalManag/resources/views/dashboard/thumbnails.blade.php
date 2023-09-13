@@ -267,7 +267,7 @@
 										</li>
 									</ul>
 <!-- Prism Precode -->
-<figure class="highlight clip-widget" id="images1"><pre><code class="language-markup"><script type="html-dashlead/script"><div><img alt="Responsive image" class="img-fluid" src="{{URL::asset('assets/img/media/7.jpg')}}"></div>
+<figure class="highlight clip-widget" id="images1"><pre><code class="language-markup"><script type="html-dashlead/script"><div><img alt="Responsive image" class="img-fluid" src="{{URL::asset('assets/img/photos/7.jpg')}}"></div>
 </script></code></pre>
 <div class="clipboard-icon" data-clipboard-target="#images1"><i class="las la-clipboard"></i></div>
 </figure>

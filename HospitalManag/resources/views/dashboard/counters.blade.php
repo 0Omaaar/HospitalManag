@@ -40,7 +40,7 @@
 @section('content')
 				<!-- row -->
 				<div class="row">
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl-3 col-lg-6 col-md-6">
 						<div class="card  bg-primary-gradient">
 							<div class="card-body">
 								<div class="counter-status d-flex md-mb-0">
@@ -55,7 +55,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl-3 col-lg-6 col-md-6">
 						<div class="card  bg-danger-gradient">
 							<div class="card-body">
 								<div class="counter-status d-flex md-mb-0">
@@ -70,7 +70,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl-3 col-lg-6 col-md-6">
 						<div class="card  bg-success-gradient">
 							<div class="card-body">
 								<div class="counter-status d-flex md-mb-0">
@@ -85,7 +85,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl-3 col-lg-6 col-md-6">
 						<div class="card  bg-warning-gradient">
 							<div class="card-body">
 								<div class="counter-status d-flex md-mb-0">

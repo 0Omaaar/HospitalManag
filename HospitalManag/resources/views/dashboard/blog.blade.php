@@ -194,7 +194,7 @@
 								<div class="">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 								<div class="d-flex align-items-center pt-3 mt-auto">
 									<div class="main-img-user avatar-sm mr-3">
-										<img src="{{URL::asset('assets/img/faces//1.jpg')}}" class="w-10 rounded-circle" alt="avatar-img">
+										<img src="{{URL::asset('assets/img/faces/1.jpg')}}" class="w-10 rounded-circle" alt="avatar-img">
 									</div>
 									<div>
 										<a href="" class="text-default">Alica Nestle</a>
@@ -215,7 +215,7 @@
 								<div class="">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 								<div class="d-flex align-items-center pt-3 mt-auto">
 									<div class="main-img-user avatar-sm mr-3">
-										<img src="{{URL::asset('assets/img/faces//2.jpg')}}" class="w-10 rounded-circle" alt="avatar-img">
+										<img src="{{URL::asset('assets/img/faces/2.jpg')}}" class="w-10 rounded-circle" alt="avatar-img">
 									</div>
 									<div>
 										<a href="" class="text-default">Alica Nestle</a>

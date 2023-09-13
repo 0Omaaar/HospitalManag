@@ -328,7 +328,6 @@
 			<!-- Container closed -->
 		</div>
 		<!-- main-content closed -->
-
 @endsection
 @section('js')
 <!--Internal  lightslider js -->

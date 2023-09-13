@@ -40,7 +40,7 @@
 @section('content')
 				<!-- row -->
 				<div class="row row-sm">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-12 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20">
 							<div class="card-body bd bd-success text-success text-center">
@@ -52,7 +52,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-12 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20">
 							<div class="card-body bd bd-danger text-danger text-center">
@@ -64,7 +64,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-12 col-md-12 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20">
 							<div class="card-body bd bd-warning text-warning text-center">
@@ -76,11 +76,8 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-				</div>
 
-				<!-- row -->
-				<div class="row row-sm">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20">
 							<div class="card-body text-danger">
@@ -93,7 +90,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20">
 							<div class="card-body text-success">
@@ -106,7 +103,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-12 col-md-12 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20">
 							<div class="card-body text-info">
@@ -124,7 +121,7 @@
 
 				<!-- row -->
 				<div class="row row-sm">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20 bg-danger">
 							<div class="card-body text-white">
@@ -136,7 +133,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20 bg-success">
 							<div class="card-body text-white">
@@ -148,7 +145,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-12 col-md-12 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20 bg-info">
 							<div class="card-body text-white">
@@ -165,7 +162,7 @@
 
 				<!-- /row -->
 				<div class="row row-sm">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20 bg-danger-transparent alert p-0">
 							<div class="card-header text-danger font-weight-bold">
@@ -178,7 +175,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20 bg-success-transparent alert p-0">
 							<div class="card-header text-success font-weight-bold">
@@ -191,7 +188,7 @@
 						</div>
 						<!--Page Widget Error-->
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-12 col-md-12 col-xl-4">
 						<!--Page Widget Error-->
 						<div class="card bd-0 mg-b-20 bg-info-transparent alert p-0">
 							<div class="card-header text-info font-weight-bold">
@@ -209,7 +206,7 @@
 
 				<!-- /row -->
 				<div class="row row-sm">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<div class="card mg-b-20 text-center">
 							<div class="card-body">
 								<img src="{{URL::asset('assets/img/svgicons/no-data.svg')}}" alt="" class="wd-35p">
@@ -218,7 +215,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-6 col-md-6 col-xl-4">
 						<div class="card mg-b-20 text-center">
 							<div class="card-body">
 								<img src="{{URL::asset('assets/img/svgicons/note_taking.svg')}}" alt="" class="wd-35p">
@@ -227,7 +224,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-12 col-md-12 col-xl-4">
 						<div class="card mg-b-20 text-center">
 							<div class="card-body">
 								<img src="{{URL::asset('assets/img/svgicons/imac.svg')}}" alt="" class="wd-40p">

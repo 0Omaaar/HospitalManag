@@ -3,8 +3,8 @@
 <!-- Internal fullcalendar Css-->
 <link href="{{URL::asset('assets/plugins/fullcalendar/fullcalendar.min.css')}}" rel="stylesheet">
 @endsection
-@section('page-header')
-				<!-- breadcrumb -->
+@section('page-header')	
+			<!-- breadcrumb -->
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex"><h4 class="content-title mb-0 my-auto">Apps</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ Calendar</span></div>
@@ -49,7 +49,7 @@
 										<img src="{{URL::asset('assets/img/media/calendar.png')}}" alt="calendar" class="ht-80p wd-80p">
 									</div>
 								</div>
-								<div class=" card p-4 mb-0 pb-0 pl-4 pr-4 pt-4">
+								<div class=" card p-4 mb-0 pb-0 pl-4 pr-4 pt-4 border-0">
 									<div class="fc-datepicker main-datepicker border "></div>
 								</div>
 								<div class="p-4 pt-0">

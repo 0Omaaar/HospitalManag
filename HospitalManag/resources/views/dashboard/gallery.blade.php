@@ -50,7 +50,7 @@
 						</li>
 						<li class="col-sm-6 col-lg-4" data-responsive="{{URL::asset('assets/img/photos/2.jpg')}}" data-src="{{URL::asset('assets/img/photos/2.jpg')}}" data-sub-html="<h4>Gallery Image 2</h4>" >
 							<a href="">
-								<img class="img-responsive" src="{{URL::asset('assets/img/photos/2.jpg')}}" alt="Thumb-1">
+								<img class="img-responsive" src="{{URL::asset('assets/img/photos/2.jp')}}g" alt="Thumb-1">
 							</a>
 						</li>
 						<li class="col-sm-6 col-lg-4" data-responsive="{{URL::asset('assets/img/photos/3.jpg')}}" data-src="{{URL::asset('assets/img/photos/3.jpg')}}" data-sub-html="<h4>Gallery Image 3</h4>" >

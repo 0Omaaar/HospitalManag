@@ -138,7 +138,7 @@
 											</tbody>
 										</table>
 									</div>
-									<hr class="mg-b-40">
+									<hr class="">
 									<a class="btn btn-purple float-right mt-3 ml-2" href="">
 										<i class="mdi mdi-currency-usd mr-1"></i>Pay Now
 									</a>

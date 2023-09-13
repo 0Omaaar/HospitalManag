@@ -32,7 +32,7 @@
 								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate" data-x-placement="bottom-end">
 									<a class="dropdown-item" href="#">2015</a>
 									<a class="dropdown-item" href="#">2016</a>
-							/		<a class="dropdown-item" href="#">2017</a>
+									<a class="dropdown-item" href="#">2017</a>
 									<a class="dropdown-item" href="#">2018</a>
 								</div>
 							</div>

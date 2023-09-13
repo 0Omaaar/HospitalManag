@@ -38,7 +38,6 @@
 				<!-- breadcrumb -->
 @endsection
 @section('content')
-
 				<!-- row -->
 				<div class="row row-sm">
 					<div class="col-sm-12 col-md-6">

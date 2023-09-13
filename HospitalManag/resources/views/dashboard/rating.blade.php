@@ -61,7 +61,7 @@
 								<div>
 									<h6 class="card-title mb-1">Static Star Rating</h6>
 								</div>
-								<div class="static-rate text-center fs-30">
+								<div class="static-rate text-center fs-30 mt-3">
 									<i class="fa fa-star text-warning" aria-hidden="true"></i>
 									<i class="fa fa-star text-warning" aria-hidden="true"></i>
 									<i class="fa fa-star text-warning" aria-hidden="true"></i>
@@ -77,7 +77,7 @@
 								<div>
 									<h6 class="card-title mb-1">Static Heart Rating</h6>
 								</div>
-								<div class="static-rate text-center fs-30">
+								<div class="static-rate text-center fs-30 mt-3">
 									<i class="fa fa-heart text-danger" aria-hidden="true"></i>
 									<i class="fa fa-heart text-danger" aria-hidden="true"></i>
 									<i class="fa fa-heart text-danger" aria-hidden="true"></i>
@@ -92,13 +92,13 @@
 
 				<!-- row -->
 				<div class="row">
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-6 col-lg-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
 									<h6 class="card-title mb-1">Star Rating</h6>
 								</div>
-								<div class="rating-stars block" id="rating">
+								<div class="rating-stars block  mt-3" id="rating">
 									<input type="number" readonly="readonly" class="rating-value" name="rating-stars-value" id="rating-stars-value" value="1">
 									<div class="rating-stars-container">
 										<div class="rating-star">
@@ -121,13 +121,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-6 col-lg-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
 									<h6 class="card-title mb-1">Heart Rating</h6>
 								</div>
-								<div class="rating-stars block" id="another-rating">
+								<div class="rating-stars block  mt-3" id="another-rating">
 									<input type="number" readonly="readonly" class="rating-value" name="another-rating-stars-value" id="another-rating-stars-value" value="2">
 									<div class="rating-stars-container">
 										<div class="rating-star">
@@ -155,7 +155,7 @@
 
 				<!-- row -->
 				<div class="row">
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-6 col-lg-12 col-xl-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -199,7 +199,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-6 col-lg-12 col-xl-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -248,7 +248,7 @@
 
 				<!-- row -->
 				<div class="row">
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-12 col-lg-12 col-xl-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -273,7 +273,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-12 col-lg-12 col-xl-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -297,7 +297,7 @@
 
 				<!-- row -->
 				<div class="row">
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-12 col-lg-12 col-xl-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>
@@ -319,7 +319,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-6">
+					<div class="col-sm-12 col-lg-12 col-xl-6 col-md-12">
 						<div class="card custom-card">
 							<div class="card-body">
 								<div>

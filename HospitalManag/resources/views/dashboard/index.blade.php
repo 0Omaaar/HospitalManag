@@ -1,7 +1,9 @@
-@extends('layouts.master')
+@extends('dashboard.layouts.master')
 @section('css')
-<!-- Morris.js Charts Plugin -->
-<link href="{{ URL::asset('assets/plugins/morris.js/morris.css') }}" rel="stylesheet" />
+<!--  Owl-carousel css-->
+<link href="{{URL::asset('assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
+<!-- Maps css -->
+<link href="{{URL::asset('assets/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
 @endsection
 @section('page-header')
 				<!-- breadcrumb -->
@@ -297,7 +299,7 @@
 								<h3 class="card-title mb-2">Recent Orders</h3>
 								<p class="tx-12 mb-0 text-muted">An order is an investor's instructions to a broker or brokerage firm to purchase or sell</p>
 							</div>
-							<div class="card-body sales-info ot-0 pt-0 pb-0">
+							<div class="card-body sales-info ot-0 pb-0 pt-0">
 								<div id="chart" class="ht-150"></div>
 								<div class="row sales-infomation pb-0 mb-0 mx-auto wd-100p">
 									<div class="col-md-6 col">
@@ -434,14 +436,15 @@
 				</div>
 				<!-- /row -->
 			</div>
+			<!-- /Container -->
 		</div>
-		<!-- Container closed -->
+		<!-- /main-content -->
 @endsection
 @section('js')
+<!--Internal  Chart.bundle js -->
+<script src="{{URL::asset('assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
 <!-- Moment js -->
 <script src="{{URL::asset('assets/plugins/raphael/raphael.min.js')}}"></script>
-<!-- Internal Piety js -->
-<script src="{{URL::asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
 <!--Internal  Flot js-->
 <script src="{{URL::asset('assets/plugins/jquery.flot/jquery.flot.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jquery.flot/jquery.flot.pie.js')}}"></script>
@@ -454,9 +457,8 @@
 <!-- Internal Map -->
 <script src="{{URL::asset('assets/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- Internal Chart js -->
-<script src="{{URL::asset('assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/modal-popup.js')}}"></script>
 <!--Internal  index js -->
 <script src="{{URL::asset('assets/js/index-dark.js')}}"></script>
-<script src="{{URL::asset('assets/js/jquery.vmap.sampledata.js')}}"></script>		
+<script src="{{URL::asset('assets/js/jquery.vmap.sampledata.js')}}"></script>	
 @endsection
