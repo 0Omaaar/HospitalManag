@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard_admin', [DashboardController::class, 'index']);
+
+Route::get('/dashboard/user', function () {
+    return view('dashboard.user.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard.user');
+
+require __DIR__.'/auth.php';
