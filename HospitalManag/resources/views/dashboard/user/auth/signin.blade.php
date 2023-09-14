@@ -29,13 +29,14 @@
 												<div class="main-signup-header">
 													<h2>Welcome back!</h2>
 													<h5 class="font-weight-semibold mb-4">Please sign in to continue.</h5>
-													<form action="#">
+													<form action="{{route('login.user')}}" method="POST"  autocomplete="off">
+														@csrf
 														<div class="form-group">
-															<label>Email</label> <input class="form-control" placeholder="Enter your email" type="text">
+															<label>Email</label> <input name="email" class="form-control" placeholder="Enter your email" type="email" :value="old('email')" required autofocus >
 														</div>
 														<div class="form-group">
-															<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password">
-														</div><button class="btn btn-main-primary btn-block">Sign In</button>
+															<label>Password</label> <input name="password" class="form-control" placeholder="Enter your password" type="password" :value="old('password')">
+														</div><button class="btn btn-main-primary btn-block" type="submit">Sign In</button>
 														<div class="row row-xs">
 															<div class="col-sm-6">
 																<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
@@ -47,7 +48,7 @@
 													</form>
 													<div class="main-signin-footer mt-5">
 														<p><a href="">Forgot password?</a></p>
-														<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+														<p>Don't have an account? <a href="{{route('register')}}">Create an Account</a></p>
 													</div>
 												</div>
 											</div>
