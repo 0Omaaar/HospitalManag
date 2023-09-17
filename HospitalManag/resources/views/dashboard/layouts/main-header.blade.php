@@ -3,14 +3,18 @@
     <div class="container-fluid">
         <div class="main-header-left ">
             <div class="responsive-logo">
-                <a href="{{ url('/' . ($page = 'index')) }}"><img src="{{ URL::asset('backDashboard/assets/img/brand/logo.png') }}"
-                        class="logo-1" alt="logo"></a>
-                <a href="{{ url('/' . ($page = 'index')) }}"><img src="{{ URL::asset('backDashboard/assets/img/brand/logo-white.png') }}"
-                        class="dark-logo-1" alt="logo"></a>
-                <a href="{{ url('/' . ($page = 'index')) }}"><img src="{{ URL::asset('backDashboard/assets/img/brand/favicon.png') }}"
-                        class="logo-2" alt="logo"></a>
-                <a href="{{ url('/' . ($page = 'index')) }}"><img src="{{ URL::asset('backDashboard/assets/img/brand/favicon.png') }}"
-                        class="dark-logo-2" alt="logo"></a>
+                <a href="{{ url('/' . ($page = 'index')) }}"><img
+                        src="{{ URL::asset('backDashboard/assets/img/brand/logo.png') }}" class="logo-1"
+                        alt="logo"></a>
+                <a href="{{ url('/' . ($page = 'index')) }}"><img
+                        src="{{ URL::asset('backDashboard/assets/img/brand/logo-white.png') }}" class="dark-logo-1"
+                        alt="logo"></a>
+                <a href="{{ url('/' . ($page = 'index')) }}"><img
+                        src="{{ URL::asset('backDashboard/assets/img/brand/favicon.png') }}" class="logo-2"
+                        alt="logo"></a>
+                <a href="{{ url('/' . ($page = 'index')) }}"><img
+                        src="{{ URL::asset('backDashboard/assets/img/brand/favicon.png') }}" class="dark-logo-2"
+                        alt="logo"></a>
             </div>
             <div class="app-sidebar__toggle" data-toggle="sidebar">
                 <a class="open-toggle" href="#"><i class="header-icon fe fe-align-left"></i></a>
@@ -28,7 +32,8 @@
                         <a href="#" class="d-flex  nav-item nav-link pr-0 country-flag1" data-toggle="dropdown"
                             aria-expanded="false">
                             <span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
-                                    src="{{ URL::asset('backDashboard/assets/img/flags/us_flag.jpg') }}" alt="img"></span>
+                                    src="{{ URL::asset('backDashboard/assets/img/flags/us_flag.jpg') }}"
+                                    alt="img"></span>
                             <div class="my-auto">
                                 <strong class="mr-2 ml-2 my-auto">English</strong>
                             </div>
@@ -306,7 +311,8 @@
                         <div class="main-header-profile bg-primary p-3">
                             <div class="d-flex wd-100p">
                                 <div class="main-img-user"><img alt=""
-                                        src="{{ URL::asset('backDashboard/assets/img/faces/6.jpg') }}" class=""></div>
+                                        src="{{ URL::asset('backDashboard/assets/img/faces/6.jpg') }}"
+                                        class=""></div>
                                 <div class="ml-3 my-auto">
                                     <h6>Petey Cruiser</h6><span>Premium Member</span>
                                 </div>
@@ -318,12 +324,16 @@
                         <a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>
                         <a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
 
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <a class="dropdown-item" style="cursor: pointer;"
-                                onclick="event.preventDefault();
+                        @if (auth('web')->check())
+                            <form method="POST" action="{{ route('logout.user') }}">
+                            @else
+                                <form method="POST" action="{{ route('logout.admin') }}">
+                        @endif
+                        @csrf
+                        <a class="dropdown-item" style="cursor: pointer;"
+                            onclick="event.preventDefault();
 										this.closest('form').submit();"><i
-                                    class="bx bx-log-out"></i> Sign Out</a>
+                                class="bx bx-log-out"></i> Sign Out</a>
                         </form>
                     </div>
                 </div>
