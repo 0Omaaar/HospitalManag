@@ -104,7 +104,7 @@
                                                 {{-- Admin form --}}
                                                 <div class="panel" id="admin">
                                                     <h5 class="font-weight-semibold mb-4">Please sign in to continue as Admin</h5>
-                                                    <form action="{{ route('login.admin') }}" method="POST"
+                                                <form action="{{ route('login.admin') }}" method="POST"
                                                         autocomplete="off">
                                                         @csrf
                                                         <div class="form-group">

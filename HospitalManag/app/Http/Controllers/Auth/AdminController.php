@@ -32,11 +32,14 @@ class AdminController extends Controller
      */
     public function store(AdminLoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        if ($request->authenticate()) {
+            $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::ADMIN);
+        }else{
+            return redirect()->back()->withErrors(['name' => 'Email Or Password invalid !']);
+        }
 
-        $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::ADMIN);
     }
     /**
      * Display the specified resource.
