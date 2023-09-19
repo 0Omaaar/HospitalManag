@@ -9,9 +9,9 @@ class SectionRepository implements \App\Http\Interfaces\Sections\SectionReposito
 {
     public function index()
     {
-        // $sections = Section::all();
-        // return view('Dashboard.Sections.index', compact('sections'));
-        return "ok";
+        $sections = Section::all();
+        return view('dashboard.Sections.index', compact('sections'));
+        // return "ok";
     }
 
     public function store($request)
