@@ -21,7 +21,7 @@ class SectionRepository implements \App\Http\Interfaces\Sections\SectionReposito
             'description' => $request->description,
         ]);
 
-        // session()->flash('add');
+        session()->flash('add');
         return redirect()->route('sections.index');
     }
 

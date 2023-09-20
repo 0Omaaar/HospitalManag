@@ -21,7 +21,7 @@
     <!-- breadcrumb -->
 @endsection
 @section('content')
-    {{-- @include('Dashboard.messages_alert') --}}
+    @include('dashboard.messages_alert')
     <!-- row -->
     <!-- row opened -->
     <div class="row row-sm">
@@ -50,7 +50,7 @@
                                 @foreach ($sections as $section)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td><a href="{{ route('sections.show', $section->id) }}">{{ $section->name }}</a>
+                                        <td><a href="{{ route('sections.show', $section->id) }}" style="font-weight: bolder; font-size: 15px;">{{ $section->name }}</a>
                                         </td>
                                         <td>{{ \Str::limit($section->description, 50) }}</td>
                                         <td>{{ $section->created_at->diffForHumans() }}</td>
