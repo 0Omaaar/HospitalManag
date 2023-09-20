@@ -31,7 +31,7 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->section->store($request);
     }
 
     /**

@@ -10,13 +10,19 @@ class SectionRepository implements \App\Http\Interfaces\Sections\SectionReposito
     public function index()
     {
         $sections = Section::all();
-        return view('dashboard.Sections.index', compact('sections'));
+        return view('dashboard.sections.index', compact('sections'));
         // return "ok";
     }
 
     public function store($request)
     {
+        Section::create([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
 
+        // session()->flash('add');
+        return redirect()->route('sections.index');
     }
 
     // Update Sections

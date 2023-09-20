@@ -1,4 +1,4 @@
-@extends('Dashboard.layouts.master')
+@extends('dashboard.layouts.master')
 @section('title')
     Sections
 @stop
@@ -75,7 +75,7 @@
         </div>
         <!--/div-->
 
-        {{-- @include('Dashboard.Sections.add') --}}
+        @include('dashboard.sections.add')
         <!-- /row -->
 
     </div>
@@ -88,7 +88,7 @@
 @section('js')
 
 
-    <!--Internal  Notify js -->
+    <!--Internal  Notify js --> 
     <script src="{{ URL::asset('backDashboard/assets/plugins/notify/js/notifIt.js') }}"></script>
     <script src="{{ URL::asset('backDashboard/assets/plugins/notify/js/notifit-custom.js') }}"></script>
 
