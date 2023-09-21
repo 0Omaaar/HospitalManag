@@ -40,7 +40,9 @@ class SectionRepository implements \App\Http\Interfaces\Sections\SectionReposito
     // destroy Sections
     public function destroy($request)
     {
-
+        $section = Section::findOrFail($request->id)->delete();
+        session()->flash('delete');
+        return redirect()->route('sections.index');
     }
 
     // destroy Sections

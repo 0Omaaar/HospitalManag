@@ -65,7 +65,7 @@
                                     </tr>
 
                                     @include('dashboard.sections.edit')
-                                    {{-- @include('Dashboard.Sections.delete') --}}
+                                    @include('dashboard.sections.delete')
                                 @endforeach
                             </tbody>
                         </table>
