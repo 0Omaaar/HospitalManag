@@ -28,7 +28,13 @@ class SectionRepository implements \App\Http\Interfaces\Sections\SectionReposito
     // Update Sections
     public function update($request)
     {
-
+        $section = Section::findOrFail($request->id);
+        $section->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ]);
+        session()->flash('edit');
+        return redirect()->route('sections.index');
     }
 
     // destroy Sections

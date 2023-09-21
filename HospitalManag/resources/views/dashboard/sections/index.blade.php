@@ -64,7 +64,7 @@
                                         </td>
                                     </tr>
 
-                                    {{-- @include('Dashboard.Sections.edit') --}}
+                                    @include('dashboard.sections.edit')
                                     {{-- @include('Dashboard.Sections.delete') --}}
                                 @endforeach
                             </tbody>
