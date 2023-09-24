@@ -29,10 +29,9 @@
             <div class="card mg-b-20">
                 <div class="card-header pb-0">
 
-                    <a href="{{ route('doctors.create') }}" class="btn btn-primary" role="button"
-                        aria-pressed="true">Add Doctor</a>
-                    <button type="button" class="btn btn-danger"
-                        id="btn_delete_all">Delete</button>
+                    <a href="{{ route('doctors.create') }}" class="btn btn-primary" role="button" aria-pressed="true">Add
+                        Doctor</a>
+                    <button type="button" class="btn btn-danger" id="btn_delete_all">Delete</button>
 
                 </div>
                 <div class="card-body">
@@ -64,11 +63,11 @@
                                         <td>{{ $doctor->name }}</td>
                                         <td>
                                             @if ($doctor->image)
-                                                <img src="{{ Url::asset('backDashboard/assets//img/doctors/' . $doctor->image->filename) }}"
+                                                <img src="{{ Url::asset('backDashboard/asset/img/doctors/' . $doctor->image->filename) }}"
                                                     height="50px" width="50px" alt="">
                                             @else
-                                                <img src="{{ Url::asset('backDashboard/assets//img/doctor_default.png') }}"
-                                                    height="50px" width="50px" alt="">
+                                                <img src="{{ Url::asset('backDashboard/assets/img/doctor.png') }}"
+                                                    height="40px" width="50px" alt="" style="border-radius: 10px;">
                                             @endif
                                         </td>
                                         <td>{{ $doctor->email }}</td>
@@ -89,28 +88,28 @@
                                         <td>{{ $doctor->created_at->diffForHumans() }}</td>
                                         <td>
 
-                                            {{-- <div class="dropdown">
+                                            <div class="dropdown">
                                                 <button aria-expanded="false" aria-haspopup="true"
                                                     class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown"
-                                                    type="button">{{ trans('doctors.Processes') }}<i
-                                                        class="fas fa-caret-down mr-1"></i></button>
+                                                    type="button">Processes<i class="fas fa-caret-down mr-1"></i></button>
                                                 <div class="dropdown-menu tx-13">
                                                     <a class="dropdown-item"
                                                         href="{{ route('doctors.edit', $doctor->id) }}"><i
                                                             style="color: #0ba360"
-                                                            class="text-success ti-user"></i>&nbsp;&nbsp;تعديل البيانات</a>
+                                                            class="text-success ti-user"></i>&nbsp;&nbsp;Edit Doctor</a>
                                                     <a class="dropdown-item" href="#" data-toggle="modal"
                                                         data-target="#update_password{{ $doctor->id }}"><i
-                                                            class="text-primary ti-key"></i>&nbsp;&nbsp;تغير كلمة المرور</a>
+                                                            class="text-primary ti-key"></i>&nbsp;&nbsp;Edit Docotr's
+                                                        Password</a>
                                                     <a class="dropdown-item" href="#" data-toggle="modal"
                                                         data-target="#update_status{{ $doctor->id }}"><i
-                                                            class="text-warning ti-back-right"></i>&nbsp;&nbsp;تغير
-                                                        الحالة</a>
+                                                            class="text-warning ti-back-right"></i>&nbsp;&nbsp;Update
+                                                        Doctor's Status</a>
                                                     <a class="dropdown-item" href="#" data-toggle="modal"
                                                         data-target="#delete{{ $doctor->id }}"><i
-                                                            class="text-danger  ti-trash"></i>&nbsp;&nbsp;حذف البيانات</a>
+                                                            class="text-danger  ti-trash"></i>&nbsp;&nbsp;Delete Doctor</a>
                                                 </div>
-                                            </div> --}}
+                                            </div>
 
                                         </td>
                                     </tr>
