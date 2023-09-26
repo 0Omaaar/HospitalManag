@@ -83,14 +83,26 @@ class DoctorRepository implements DoctorRepositoryInterface
             Doctor::destroy($request->id);
             session()->flash('delete');
             return redirect()->route('doctors.index');
-        }else{
+        } else {
+            $delete_select_id = explode(",", $request->delete_select_id);
+            foreach ($delete_select_id as $ids_doctors) {
+                $doctor = Doctor::findorfail($ids_doctors);
+                if ($doctor->image) {
+                    $this->delete_attachment('upload_image', 'doctors/' . $doctor->image->filename, $ids_doctors, $doctor->image->filename);
+                }
+            }
 
+            Doctor::destroy($delete_select_id);
+            session()->flash('delete');
+            return redirect()->route('doctors.index');
         }
     }
 
     public function edit($id)
     {
-
+        $sections = Section::all();
+        $doctor = Doctor::findorfail($id);
+        return view('dashboard.doctors.edit',compact('sections','doctor'));
     }
 
 

@@ -116,8 +116,8 @@
                                         </td>
                                     </tr>
                                     @include('dashboard.doctors.delete')
-                                    {{-- @include('Dashboard.Doctors.delete_select')
-                                @include('Dashboard.Doctors.update_password')
+                                    @include('dashboard.doctors.delete_select')
+                                    {{--    @include('Dashboard.Doctors.update_password')
                                 @include('Dashboard.Doctors.update_status') --}}
                                 @endforeach
                             </tbody>

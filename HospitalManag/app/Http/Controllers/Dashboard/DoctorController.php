@@ -44,7 +44,7 @@ class DoctorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return $this->doctor->edit($id);
     }
 
     /**
