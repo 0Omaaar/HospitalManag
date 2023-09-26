@@ -74,10 +74,19 @@ class DoctorRepository implements DoctorRepositoryInterface
 
     public function destroy($request)
     {
+        if ($request->page_id == 1) {
 
+            if ($request->filename) {
 
+                $this->delete_attachment('upload_image', 'doctors/' . $request->filename, $request->id, $request->filename);
+            }
+            Doctor::destroy($request->id);
+            session()->flash('delete');
+            return redirect()->route('doctors.index');
+        }else{
+
+        }
     }
-
 
     public function edit($id)
     {

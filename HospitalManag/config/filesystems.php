@@ -46,10 +46,11 @@ return [
 
         'upload_image' => [
             'driver' => 'local',
-            'root' => storage_path('backDashboard/assets/img'),
-            'url' => env('APP_URL').'/storage',
+            'root' => public_path('backDashboard/assets/img'), 
+            'url' => env('APP_URL').'/backDashboard/assets/img', 
             'visibility' => 'public',
         ],
+        
 
         's3' => [
             'driver' => 's3',

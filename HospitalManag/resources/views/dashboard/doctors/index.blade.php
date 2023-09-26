@@ -63,11 +63,13 @@
                                         <td>{{ $doctor->name }}</td>
                                         <td>
                                             @if ($doctor->image)
-                                                <img src="{{ Url::asset('backDashboard/asset/img/doctors/' . $doctor->image->filename) }}"
-                                                    height="50px" width="50px" alt="">
+                                                <img src="{{ Url::asset('backDashboard/assets/img/doctors/' . $doctor->image->filename) }}"
+                                                    style="border-radius: 10px;" height="40px" width="50px"
+                                                    alt="">
                                             @else
                                                 <img src="{{ Url::asset('backDashboard/assets/img/doctor.png') }}"
-                                                    height="40px" width="50px" alt="" style="border-radius: 10px;">
+                                                    height="40px" width="50px" alt=""
+                                                    style="border-radius: 10px;">
                                             @endif
                                         </td>
                                         <td>{{ $doctor->email }}</td>
@@ -113,8 +115,8 @@
 
                                         </td>
                                     </tr>
-                                    {{-- @include('Dashboard.Doctors.delete')
-                                @include('Dashboard.Doctors.delete_select')
+                                    @include('dashboard.doctors.delete')
+                                    {{-- @include('Dashboard.Doctors.delete_select')
                                 @include('Dashboard.Doctors.update_password')
                                 @include('Dashboard.Doctors.update_status') --}}
                                 @endforeach
