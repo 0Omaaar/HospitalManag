@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Admin\Appointment;
 use App\Models\Admin\Image;
 use App\Models\Admin\Section;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,5 +22,10 @@ class Doctor extends Model
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function doctorappointments()
+    {
+        return $this->belongsToMany(Appointment::class,'appointment_doctor');
     }
 }

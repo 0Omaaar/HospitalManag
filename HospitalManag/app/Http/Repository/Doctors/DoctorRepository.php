@@ -19,6 +19,7 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function index()
     {
         $doctors = Doctor::all();
+        // $appointments = Appointment::all();
         return view('dashboard.doctors.index', compact('doctors'));
     }
 
