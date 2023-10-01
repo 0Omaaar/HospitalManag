@@ -141,5 +141,18 @@ class DoctorRepository implements DoctorRepositoryInterface
         return view('dashboard.doctors.edit',compact('sections','doctor', 'appointments'));
     }
 
+    public function update_password($request){
+        try{
+            $doctor = Doctor::findorfail($request->id);
+            $doctor->update([
+                'password' => Hash::make($request->password)
+            ]);
 
+            session()->flash('edit');
+            return redirect()->back();
+        }
+        catch(\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
 }

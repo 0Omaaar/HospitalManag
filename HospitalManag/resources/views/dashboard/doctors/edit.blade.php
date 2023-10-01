@@ -109,33 +109,36 @@
                         </div>
 
                         <div class=" row row-xs align-items-center mg-b-20">
-                                <div class="col-md-1">
-                                    <label for="exampleInputEmail1">
-                                        Appointments</label>
-                                </div>
-
-                                <div class="col-md-11 mg-t-5 mg-md-t-0" style="margin-left: 20px;padding-left: 90px">
-                                    <select multiple="multiple" class="form-control" name="appointments[]">
-                                        @foreach ($appointments as $appointment)
-                                            @php $check = []; @endphp
-                                            @foreach ($doctor->doctorappointments as $key => $appointmentDOC)
-                                                @php
-                                                    $check[] = $appointmentDOC->id;
-                                                @endphp
-                                            @endforeach
-                                            <option value="{{$appointment->id}}" {{ in_array($appointment->id, $check) ? 'selected' : '' }}>{{$appointment->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
+                            <div class="col-md-1">
+                                <label for="exampleInputEmail1">
+                                    Appointments</label>
                             </div>
+
+                            <div class="col-md-11 mg-t-5 mg-md-t-0" style="margin-left: 20px;padding-left: 90px;">
+                                <select multiple="multiple" class="form-control" name="appointments[]"
+                                    style="width: 100%;">
+                                    @foreach ($appointments as $appointment)
+                                        @php $check = []; @endphp
+                                        @foreach ($doctor->doctorappointments as $key => $appointmentDOC)
+                                            @php
+                                                $check[] = $appointmentDOC->id;
+                                            @endphp
+                                        @endforeach
+                                        <option value="{{ $appointment->id }}"
+                                            {{ in_array($appointment->id, $check) ? 'selected' : '' }}>
+                                            {{ $appointment->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                        </div>
 
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-1 mt-2">
                                 <label for="exampleInputEmail1">N Of Statements</label>
                             </div>
                             <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                <input class="form-control ml-4" style="width: 640px" name="number_of_statements"
+                                <input class="form-control ml-4" style="width: 98%" name="number_of_statements"
                                     value="{{ $doctor->number_of_statements }}" type="text">
                             </div>
                         </div>
@@ -151,8 +154,7 @@
                             </div>
                         </div>
 
-                        <button type="submit"
-                            class="btn btn-main-primary pd-x-30 mg-r-5 mg-t-5">Submit</button>
+                        <button type="submit" class="btn btn-main-primary pd-x-30 mg-r-5 mg-t-5">Submit</button>
                     </div>
                 </form>
             </div>
@@ -172,7 +174,7 @@
         var output = document.getElementById('output');
         output.src = URL.createObjectURL(event.target.files[0]);
         output.onload = function() {
-            URL.revokeObjectURL(output.src) 
+            URL.revokeObjectURL(output.src)
         }
     };
 </script>

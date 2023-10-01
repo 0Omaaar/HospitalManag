@@ -4,6 +4,12 @@
 @stop
 @section('css')
     <link href="{{ URL::asset('backDashboard/assets/plugins/notify/css/notifIt.css') }}" rel="stylesheet" />
+    <style>
+        .customClassForDropDown {
+            height: 100px;
+            overflow-y: auto;
+        }
+    </style>
 @endsection
 
 
@@ -88,12 +94,19 @@
 
                                         <td>{{ $doctor->created_at->diffForHumans() }}</td>
                                         <td>
-
-                                            <div class="dropdown">
-                                                <button aria-expanded="false" aria-haspopup="true"
-                                                    class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown"
-                                                    type="button">Processes<i class="fas fa-caret-down mr-1"></i></button>
-                                                <div class="dropdown-menu tx-13">
+                                            <button class="navbar-toggler navbar-toggler-right main-navbar-toggler ml-3"
+                                                type="button" data-toggle="collapse"
+                                                data-target="#main-nav-collapse{{ $doctor->id }}"
+                                                aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                                                aria-label="Toggle navigation">
+                                                <span class="fa fa-bars"></span>
+                                            </button>
+                                            <a class="navbar-brand animation" data-animation="fadeInLeft"
+                                                href="#"></a>
+                                            <div class="collapse navbar-collapse"
+                                                id="main-nav-collapse{{ $doctor->id }}">
+                                                <ul class="nav navbar-nav navbar-main mr-auto mt-2 mt-md-0 animation"
+                                                    data-animation="fadeInRight">
                                                     <a class="dropdown-item"
                                                         href="{{ route('doctors.edit', $doctor->id) }}"><i
                                                             style="color: #0ba360"
@@ -109,15 +122,14 @@
                                                     <a class="dropdown-item" href="#" data-toggle="modal"
                                                         data-target="#delete{{ $doctor->id }}"><i
                                                             class="text-danger  ti-trash"></i>&nbsp;&nbsp;Delete Doctor</a>
-                                                </div>
+                                                </ul>
                                             </div>
-
                                         </td>
                                     </tr>
                                     @include('dashboard.doctors.delete')
                                     @include('dashboard.doctors.delete_select')
-                                    {{--    @include('Dashboard.Doctors.update_password')
-                                @include('Dashboard.Doctors.update_status') --}}
+                                    @include('dashboard.doctors.update_password')
+                                    {{--   @include('Dashboard.Doctors.update_status') --}}
                                 @endforeach
                             </tbody>
                         </table>

@@ -19,7 +19,10 @@ interface DoctorRepositoryInterface
     // destroy Doctor
     public function destroy($request);
 
-    // destroy Doctor
+    // Edit Doctor
     public function edit($id);
+
+    // Update doctor's Password
+    public function update_password($request);
 
 }

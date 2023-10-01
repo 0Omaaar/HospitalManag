@@ -23,6 +23,7 @@ Route::get('/dashboard/user', function () {
 Route::middleware(['auth:admin'])->group(function () {
     Route::resource('sections', SectionController::class);
     Route::resource('doctors', DoctorController::class);
+    Route::post('update_password', [DoctorController::class, 'update_password'])->name('update_password');
 });
 
 require __DIR__ . '/auth.php';
