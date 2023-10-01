@@ -103,16 +103,15 @@
 
                         </div>
 
-                        {{-- <div class="row row-xs align-items-center mg-b-20">
+                        <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-1">
                                 <label for="exampleInputEmail1">
-                                    {{ trans('doctors.appointments') }}</label>
+                                    Appointments</label>
                             </div>
 
-                            <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                <select multiple="multiple" class="testselect2" name="appointments[]">
-                                    <option selected name="appointments[]" value="" selected disabled>-- حدد
-                                        المواعيد --</option>
+                            <div class="col-md-11 mg-t-6 mg-md-t-0" style="margin-left: 20px;padding-left: 70px">
+                                <select multiple="multiple" class="form-control" name="appointments[]">
+                                    <option selected name="appointments[]" value="" selected disabled>--Choose Appointment--</option>
                                     @foreach ($appointments as $appointment)
                                         <option value="{{ $appointment->id }}">{{ $appointment->name }}</option>
                                     @endforeach
@@ -120,7 +119,7 @@
 
                             </div>
 
-                        </div> --}}
+                        </div>
 
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-1">

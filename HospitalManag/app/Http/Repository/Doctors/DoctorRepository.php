@@ -2,10 +2,11 @@
 namespace App\Http\Repository\Doctors;
 
 use App\Http\Interfaces\Doctors\DoctorRepositoryInterface;
-use App\Models\Appointment;
+
 use App\Models\Doctor;
 use App\Models\Image;
 use App\Models\Admin\Section;
+use App\Models\Admin\Appointment;
 use App\Http\Traits\UploadTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -18,16 +19,15 @@ class DoctorRepository implements DoctorRepositoryInterface
 
     public function index()
     {
-        $doctors = Doctor::all();
-        // $appointments = Appointment::all();
+        $doctors = Doctor::with('doctorappointments')->get();
         return view('dashboard.doctors.index', compact('doctors'));
     }
 
     public function create()
     {
         $sections = Section::all();
-        // $appointments = Appointment::all();
-        return view('dashboard.doctors.add', compact('sections'));
+        $appointments = Appointment::all();
+        return view('dashboard.doctors.add', compact('sections', 'appointments'));
     }
 
 
@@ -49,7 +49,7 @@ class DoctorRepository implements DoctorRepositoryInterface
 
 
             // insert pivot tABLE
-            // $doctors->doctorappointments()->attach($request->appointments);
+            $doctors->doctorappointments()->attach($request->appointments);
 
 
             //Upload img
@@ -70,7 +70,41 @@ class DoctorRepository implements DoctorRepositoryInterface
 
     public function update($request)
     {
+        DB::beginTransaction();
 
+        try {
+
+            $doctor = Doctor::findorfail($request->id);
+            $doctor->name = $request->name;
+            $doctor->email = $request->email;
+            $doctor->section_id = $request->section_id;
+            $doctor->phone = $request->phone;
+            $doctor->number_of_statements = 0;
+            $doctor->save();
+
+            // update pivot tABLE
+            $doctor->doctorappointments()->sync($request->appointments);
+
+            // update photo
+            if ($request->has('photo')){
+                // Delete old photo
+                if ($doctor->image){
+                    $old_img = $doctor->image->filename;
+                    $this->Delete_attachment('upload_image','doctors/'.$old_img,$request->id);
+                }
+                //Upload img
+                $this->verifyAndStoreImage($request,'photo','doctors','upload_image',$request->id,'App\Models\Doctor');
+            }
+
+            DB::commit();
+            session()->flash('edit');
+            return redirect()->route('doctors.index');
+
+        }
+        catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     public function destroy($request)
@@ -102,8 +136,9 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function edit($id)
     {
         $sections = Section::all();
+        $appointments = Appointment::all();
         $doctor = Doctor::findorfail($id);
-        return view('dashboard.doctors.edit',compact('sections','doctor'));
+        return view('dashboard.doctors.edit',compact('sections','doctor', 'appointments'));
     }
 
 

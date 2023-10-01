@@ -42,13 +42,13 @@
                                     <th>#</th>
                                     <th><input name="select_all" id="example-select-all" type="checkbox" /></th>
                                     <th>Name</th>
-                                    <th>img</th>
-                                    <th>email</th>
-                                    <th>section</th>
-                                    <th>phone</th>
-                                    {{-- <th>appointments</th> --}}
+                                    <th>Img</th>
+                                    <th>Email</th>
+                                    <th>Section</th>
+                                    <th>Phone</th>
+                                    <th>Appointments</th>
                                     <th>Status</th>
-                                    <th>created_at</th>
+                                    <th>Created_at</th>
                                     <th>Processes</th>
                                 </tr>
                             </thead>
@@ -75,16 +75,15 @@
                                         <td>{{ $doctor->email }}</td>
                                         <td>{{ $doctor->section->name }}</td>
                                         <td>{{ $doctor->phone }}</td>
-                                        {{-- <td>
+                                        <td>
                                             @foreach ($doctor->doctorappointments as $appointment)
                                                 {{ $appointment->name }}
                                             @endforeach
-                                        </td> --}}
+                                        </td>
                                         <td>
                                             <div
                                                 class="dot-label bg-{{ $doctor->status == 1 ? 'success' : 'danger' }} ml-1">
                                             </div>
-                                            {{-- {{ $doctor->status == 1 ? 'Enabled' : 'Not Enabled' }} --}}
                                         </td>
 
                                         <td>{{ $doctor->created_at->diffForHumans() }}</td>

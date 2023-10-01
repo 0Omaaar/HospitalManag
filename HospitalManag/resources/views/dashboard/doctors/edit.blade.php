@@ -40,7 +40,7 @@
     <div class="col-lg-12 col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('doctors.update', 'test') }}" method="post" autocomplete="off"
+                <form action="{{ route('doctors.update', 'update') }}" method="post" autocomplete="off"
                     enctype="multipart/form-data">
                     {{ method_field('patch') }}
                     {{ csrf_field() }}
@@ -108,14 +108,14 @@
 
                         </div>
 
-                        {{-- <div class=" row row-xs align-items-center mg-b-20">
+                        <div class=" row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{trans('doctors.appointments')}}</label>
+                                        Appointments</label>
                                 </div>
 
-                                <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <select multiple="multiple" class="testselect2" name="appointments[]">
+                                <div class="col-md-11 mg-t-5 mg-md-t-0" style="margin-left: 20px;padding-left: 90px">
+                                    <select multiple="multiple" class="form-control" name="appointments[]">
                                         @foreach ($appointments as $appointment)
                                             @php $check = []; @endphp
                                             @foreach ($doctor->doctorappointments as $key => $appointmentDOC)
@@ -128,10 +128,10 @@
                                     </select>
                                 </div>
 
-                            </div> --}}
+                            </div>
 
                         <div class="row row-xs align-items-center mg-b-20">
-                            <div class="col-md-1">
+                            <div class="col-md-1 mt-2">
                                 <label for="exampleInputEmail1">N Of Statements</label>
                             </div>
                             <div class="col-md-11 mg-t-5 mg-md-t-0">

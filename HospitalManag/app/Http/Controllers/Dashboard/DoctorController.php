@@ -31,28 +31,22 @@ class DoctorController extends Controller
         return $this->doctor->store($request);
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit(string $id)
     {
         return $this->doctor->edit($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    
+    public function update(Request $request)
     {
-        //
+        return $this->doctor->update($request);
     }
 
     
