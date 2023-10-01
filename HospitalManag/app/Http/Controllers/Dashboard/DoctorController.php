@@ -63,4 +63,8 @@ class DoctorController extends Controller
         ]);
         return $this->doctor->update_password($request);
     }
+
+    public function update_status(Request $request){
+        return $this->doctor->update_status($request);
+    }
 }

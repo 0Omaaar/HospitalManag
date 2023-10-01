@@ -155,4 +155,19 @@ class DoctorRepository implements DoctorRepositoryInterface
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
+
+    public function update_status($request){
+        try{
+            $doctor = Doctor::findorfail($request->id);
+            $doctor->update([
+                'status' => $request->status
+            ]);
+
+            session()->flash('edit');
+            return redirect()->back();
+        }
+        catch(\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
 }

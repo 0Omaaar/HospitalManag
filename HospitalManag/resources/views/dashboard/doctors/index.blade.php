@@ -88,7 +88,7 @@
                                         </td>
                                         <td>
                                             <div
-                                                class="dot-label bg-{{ $doctor->status == 1 ? 'success' : 'danger' }} ml-1">
+                                                class="dot-label bg-{{ $doctor->status == 1 ? 'success' : 'danger' }} ml-1" style="width: 20%;">
                                             </div>
                                         </td>
 
@@ -129,7 +129,7 @@
                                     @include('dashboard.doctors.delete')
                                     @include('dashboard.doctors.delete_select')
                                     @include('dashboard.doctors.update_password')
-                                    {{--   @include('Dashboard.Doctors.update_status') --}}
+                                    @include('dashboard.doctors.update_status')
                                 @endforeach
                             </tbody>
                         </table>
