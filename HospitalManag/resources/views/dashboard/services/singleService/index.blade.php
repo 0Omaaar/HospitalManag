@@ -70,7 +70,7 @@
                                     </tr>
 
                                     @include('dashboard.services.singleService.edit')
-                                    {{-- @include('Dashboard.Services.Single Service.delete') --}}
+                                    @include('dashboard.services.singleService.delete')
                                 @endforeach
                             </tbody>
                         </table>
