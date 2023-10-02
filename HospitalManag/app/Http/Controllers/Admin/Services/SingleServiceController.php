@@ -28,7 +28,7 @@ class SingleServiceController extends Controller
 
     public function store(Request $request)
     {
-        //
+        return $this->service->store($request);
     }
 
 
@@ -44,9 +44,9 @@ class SingleServiceController extends Controller
     }
 
 
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        return $this->service->update($request);
     }
 
 

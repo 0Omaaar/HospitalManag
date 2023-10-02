@@ -69,7 +69,7 @@
                                         </td>
                                     </tr>
 
-                                    {{-- @include('Dashboard.Services.Single Service.edit') --}}
+                                    @include('dashboard.services.singleService.edit')
                                     {{-- @include('Dashboard.Services.Single Service.delete') --}}
                                 @endforeach
                             </tbody>
@@ -80,7 +80,7 @@
         </div>
 
 
-        {{-- @include('Dashboard.Services.Single Service.add') --}}
+        @include('dashboard.services.singleService.add')
 
 
     </div>
