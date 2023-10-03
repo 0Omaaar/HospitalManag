@@ -30,6 +30,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('update_status', [DoctorController::class, 'update_status'])->name('update_status');
 
     Route::resource('service', SingleServiceController::class);
+
+    Route::view('add_groupServices', 'livewire.GroupServices.include_create')->name('add_groupServices');
 });
 
 require __DIR__ . '/auth.php';

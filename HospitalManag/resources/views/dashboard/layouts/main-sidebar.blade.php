@@ -75,7 +75,7 @@
                     </svg><span class="side-menu__label">Services</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{route('service.index')}}">Single Service</a></li>
-                    <li><a class="slide-item" href="">Group Services</a>
+                    <li><a class="slide-item" href="{{route('add_groupServices')}}">Group Services</a>
                     </li>
                     <li><a class="slide-item" href="">Insurance</a></li>
                     <li><a class="slide-item" href="">Ambulance</a></li>
