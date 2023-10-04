@@ -18,7 +18,7 @@
 
 @endsection
 @section('content')
-
+    @include('dashboard.messages_alert')
     <div class="row row-sm">
         <div class="col-xl-12">
             <div class="card">

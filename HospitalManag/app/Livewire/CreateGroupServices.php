@@ -126,6 +126,9 @@ class CreateGroupServices extends Component
             $this->ServiceSaved = false;
             $this->ServiceUpdated = true;
 
+            session()->flash('edit');
+
+            return redirect()->to('add_groupServices');
         } else {
 
             // insert
@@ -196,7 +199,7 @@ class CreateGroupServices extends Component
     public function delete($id)
     {
         Group::destroy($id);
-        return redirect()->to('/Add_GroupServices');
+        return redirect()->to('/add_groupServices');
     }
 
 }

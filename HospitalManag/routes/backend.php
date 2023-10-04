@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Insurances\InsuranceController;
 use App\Http\Controllers\Admin\Sections\SectionController;
 use App\Http\Controllers\Admin\Services\SingleServiceController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -32,6 +33,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('service', SingleServiceController::class);
 
     Route::view('add_groupServices', 'livewire.GroupServices.include_create')->name('add_groupServices');
+
+    Route::resource('insurance', InsuranceController::class);
 });
 
 require __DIR__ . '/auth.php';
