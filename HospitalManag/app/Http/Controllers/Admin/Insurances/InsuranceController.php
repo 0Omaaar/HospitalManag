@@ -10,48 +10,49 @@ class InsuranceController extends Controller
 {
     protected $insurance;
 
-    public function __construct(InsuranceRepositoryInterface $insurance){
+    public function __construct(InsuranceRepositoryInterface $insurance)
+    {
         $this->insurance = $insurance;
     }
-    
+
     public function index()
     {
         return $this->insurance->index();
     }
 
-    
+
     public function create()
     {
-        //
+        return $this->insurance->create();
     }
 
-    
+
     public function store(Request $request)
     {
-        //
+        return $this->insurance->store($request);
     }
 
-    
+
     public function show(string $id)
     {
         //
     }
 
-    
+
     public function edit(string $id)
     {
-        //
+        return $this->insurance->edit($id);
     }
 
-    
+
     public function update(Request $request, string $id)
     {
-        //
+        return $this->insurance->update($request, $id);
     }
 
-    
+
     public function destroy(string $id)
     {
-        //
+        return $this->insurance->destroy($id);
     }
 }
