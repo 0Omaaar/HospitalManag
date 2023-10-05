@@ -77,7 +77,7 @@
                     <li><a class="slide-item" href="{{ route('service.index') }}">Single Service</a></li>
                     <li><a class="slide-item" href="{{ route('add_groupServices') }}">Group Services</a></li>
                     <li><a class="slide-item" href="{{route('insurance.index')}}">Insurance</a></li>
-                    <li><a class="slide-item" href="">Ambulance</a></li>
+                    <li><a class="slide-item" href="{{route('ambulance.index')}}">Ambulance</a></li>
                     <li><a class="slide-item" href="">Ambulance Calls</a></li>
                 </ul>
             </li>
