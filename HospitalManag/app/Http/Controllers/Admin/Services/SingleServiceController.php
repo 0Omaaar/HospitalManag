@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Services;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Service\SingleServiceRepositoryInterface;
+use App\Http\Requests\SingleServiceStoreRequest;
 use Illuminate\Http\Request;
 
 class SingleServiceController extends Controller
@@ -26,7 +27,7 @@ class SingleServiceController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(SingleServiceStoreRequest $request)
     {
         return $this->service->store($request);
     }
@@ -44,7 +45,7 @@ class SingleServiceController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(SingleServiceStoreRequest $request)
     {
         return $this->service->update($request);
     }

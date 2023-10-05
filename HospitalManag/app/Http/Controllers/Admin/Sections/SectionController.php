@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Sections;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Sections\SectionRepositoryInterface;
+use App\Http\Requests\SectionStoreRequest;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -25,7 +26,7 @@ class SectionController extends Controller
     }
 
     
-    public function store(Request $request)
+    public function store(SectionStoreRequest $request)
     {
         return $this->section->store($request);
     }
@@ -43,7 +44,7 @@ class SectionController extends Controller
     }
 
     
-    public function update(Request $request)
+    public function update(SectionStoreRequest $request)
     {
         return $this->section->update($request);
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Doctors\DoctorRepositoryInterface;
+use App\Http\Requests\DoctorStoreRequest;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -26,7 +27,7 @@ class DoctorController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(DoctorStoreRequest $request)
     {
         return $this->doctor->store($request);
     }
@@ -44,7 +45,7 @@ class DoctorController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(DoctorStoreRequest $request)
     {
         return $this->doctor->update($request);
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Insurances;
 
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Insurances\InsuranceRepositoryInterface;
+use App\Http\Requests\InsuranceStoreRequest;
 use Illuminate\Http\Request;
 
 class InsuranceController extends Controller
@@ -27,7 +28,7 @@ class InsuranceController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(InsuranceStoreRequest $request)
     {
         return $this->insurance->store($request);
     }
@@ -45,7 +46,7 @@ class InsuranceController extends Controller
     }
 
 
-    public function update(Request $request, string $id)
+    public function update(InsuranceStoreRequest $request, string $id)
     {
         return $this->insurance->update($request, $id);
     }
