@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Ambulances\AmbulanceController;
 use App\Http\Controllers\Admin\Insurances\InsuranceController;
+use App\Http\Controllers\Admin\Patients\PatientController;
 use App\Http\Controllers\Admin\Sections\SectionController;
 use App\Http\Controllers\Admin\Services\SingleServiceController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -38,6 +39,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('insurance', InsuranceController::class);
 
     Route::resource('ambulance', AmbulanceController::class);
+
+    Route::resource('patient', PatientController::class);
 });
 
 require __DIR__ . '/auth.php';

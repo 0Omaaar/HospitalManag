@@ -6,7 +6,8 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">Ambulance</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ Ambulance Cars</span>
+                <h4 class="content-title mb-0 my-auto">Ambulance</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ Ambulance
+                    Cars</span>
             </div>
         </div>
     </div>
@@ -50,7 +51,11 @@
                                         <td>{{ $ambulance->driver_name }}</td>
                                         <td>{{ $ambulance->driver_license_number }}</td>
                                         <td>{{ $ambulance->driver_phone }}</td>
-                                        <td>{{ $ambulance->is_available == 1 ? 'Active' : 'Desactive' }}</td>
+                                        @if ($ambulance->is_available == 1)
+                                            <td class="bg-success" style="border-radius: 10px;">Active</td>
+                                        @else
+                                            <td class="bg-danger" style="border-radius: 10px;">Desactive</td>
+                                        @endif
                                         <td>{{ $ambulance->notes }}</td>
                                         <td>
                                             <a href="{{ route('ambulance.edit', $ambulance->id) }}"
@@ -74,8 +79,8 @@
     </div>
 
     </div>
-    @endsection
-    @section('js')
-        <script src="{{ URL::asset('backDashboard/assets/plugins/notify/js/notifIt.js') }}"></script>
-        <script src="{{ URL::asset('backDashboard/assets/plugins/notify/js/notifit-custom.js') }}"></script>
-    @endsection
+@endsection
+@section('js')
+    <script src="{{ URL::asset('backDashboard/assets/plugins/notify/js/notifIt.js') }}"></script>
+    <script src="{{ URL::asset('backDashboard/assets/plugins/notify/js/notifit-custom.js') }}"></script>
+@endsection

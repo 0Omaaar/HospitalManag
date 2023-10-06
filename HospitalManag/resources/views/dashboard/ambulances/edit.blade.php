@@ -1,4 +1,4 @@
-@extends('sashboard.layouts.master')
+@extends('dashboard.layouts.master')
 @section('css')
     <link href="{{ URL::asset('backDashboard/assets/plugins/notify/css/notifIt.css') }}" rel="stylesheet" />
 @endsection
@@ -92,7 +92,7 @@
                                 <label>Status</label>
                                 &nbsp;
                                 <input name="is_available" {{ $ambulance->is_available == 1 ? 'checked' : '' }}
-                                    value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    value="1" type="checkbox" style="margin-left: 5px;" class="form-check-input" id="exampleCheck1">
                             </div>
                         </div>
 
