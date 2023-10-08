@@ -50,7 +50,7 @@ class PatientRepository implements PatientRepositoryInterface
     // show Patients
     public function show($id)
     {
-        $Patient = patient::findorfail($id);
+        $Patient = Patient::findorfail($id);
         // $invoices = Invoice::where('patient_id', $id)->get();
         // $receipt_accounts = ReceiptAccount::where('patient_id', $id)->get();
         // $Patient_accounts = PatientAccount::where('patient_id', $id)->get();

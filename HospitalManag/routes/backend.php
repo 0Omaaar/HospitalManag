@@ -41,6 +41,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('ambulance', AmbulanceController::class);
 
     Route::resource('patient', PatientController::class);
+
+    Route::view('single_invoices', 'livewire.singleInvoices.index')->name('single_invoices');
 });
 
 require __DIR__ . '/auth.php';
