@@ -14,7 +14,9 @@
     @if ($InvoiceUpdated)
         <div class="alert alert-info">Data Updated Successfully.</div>
     @endif
-
+    @if ($InvoiceDeleted)
+        <div class="alert alert-danger">Data Deleted Successfully.</div>
+    @endif
     @if ($show_table)
         @include('livewire.singleInvoices.table')
     @else
@@ -53,8 +55,8 @@
                     <label>Invoice Type</label>
                     <select wire:model="type" class="form-control" {{ $updateMode == true ? 'disabled' : '' }}>
                         <option value="">-- Choose --</option>
-                        <option value="1">نقدي</option>
-                        <option value="2">اجل</option>
+                        <option value="1">Cash</option>
+                        <option value="2">Credit</option>
                     </select>
                 </div>
 

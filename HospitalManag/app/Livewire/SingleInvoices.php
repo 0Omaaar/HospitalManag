@@ -14,7 +14,7 @@ use Livewire\Component;
 
 class SingleInvoices extends Component
 {
-    public $InvoiceSaved, $InvoiceUpdated;
+    public $InvoiceSaved, $InvoiceUpdated, $InvoiceDeleted = false;
     public $show_table = true;
     public $tax_rate = 17;
     public $updateMode = false;
@@ -75,7 +75,8 @@ class SingleInvoices extends Component
         $this->single_invoice_id = $single_invoice->id;
         $this->patient_id = $single_invoice->patient_id;
         $this->doctor_id = $single_invoice->doctor_id;
-        $this->section_id = Section::where('name', $single_invoice->section_id)->id->first();
+        $this->section_id = Section::where('id', $single_invoice->section_id)->first()->name;
+
         $this->service_id = $single_invoice->service_id;
         $this->price = $single_invoice->price;
         $this->discount_value = $single_invoice->discount_value;
@@ -100,7 +101,7 @@ class SingleInvoices extends Component
                     $single_invoices->invoice_date = date('Y-m-d');
                     $single_invoices->patient_id = $this->patient_id;
                     $single_invoices->doctor_id = $this->doctor_id;
-                    $single_invoices->section_id = Section::where('name', $this->section_id)->id();
+                    $single_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
                     $single_invoices->service_id = $this->service_id;
                     $single_invoices->price = $this->price;
                     $single_invoices->discount_value = $this->discount_value;
@@ -165,7 +166,7 @@ class SingleInvoices extends Component
                     $single_invoices->invoice_date = date('Y-m-d');
                     $single_invoices->patient_id = $this->patient_id;
                     $single_invoices->doctor_id = $this->doctor_id;
-                    $single_invoices->section_id = Section::where('name', $this->section_id)->id;
+                    $single_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
                     $single_invoices->service_id = $this->service_id;
                     $single_invoices->price = $this->price;
                     $single_invoices->discount_value = $this->discount_value;
@@ -193,7 +194,7 @@ class SingleInvoices extends Component
                     $single_invoices->invoice_date = date('Y-m-d');
                     $single_invoices->patient_id = $this->patient_id;
                     $single_invoices->doctor_id = $this->doctor_id;
-                    $single_invoices->section_id = Section::where('name', $this->section_id)->id;
+                    $single_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
                     $single_invoices->service_id = $this->service_id;
                     $single_invoices->price = $this->price;
                     $single_invoices->discount_value = $this->discount_value;
@@ -229,15 +230,17 @@ class SingleInvoices extends Component
 
     public function delete($id)
     {
-
         $this->single_invoice_id = $id;
-
     }
 
     public function destroy()
     {
         SingleInvoice::destroy($this->single_invoice_id);
+        
+        $this->show_table = true;
+        $this->InvoiceDeleted = true;
         return redirect()->to('/single_invoices');
+        
     }
 
 
