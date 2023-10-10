@@ -10,10 +10,12 @@ use App\Http\Interfaces\Sections\SectionRepositoryInterface;
 use App\Http\Interfaces\Service\SingleServiceRepositoryInterface;
 use App\Http\Repository\Ambulances\AmbulanceRepository;
 use App\Http\Repository\Doctors\DoctorRepository;
+use App\Http\Repository\Finance\ReceiptRepository;
 use App\Http\Repository\Insurances\InsuranceRepository;
 use App\Http\Repository\Patients\PatientRepository;
 use App\Http\Repository\Sections\SectionRepository;
 use App\Http\Repository\Service\SingleServiceRepository;
+use App\Http\Interfaces\Finance\ReceiptRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -29,6 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(InsuranceRepositoryInterface::class, InsuranceRepository::class);
         $this->app->bind(AmbulanceRepositoryInterface::class, AmbulanceRepository::class);
         $this->app->bind(PatientRepositoryInterface::class, PatientRepository::class);
+        $this->app->bind(ReceiptRepositoryInterface::class, ReceiptRepository::class);
     }
 
     /**
