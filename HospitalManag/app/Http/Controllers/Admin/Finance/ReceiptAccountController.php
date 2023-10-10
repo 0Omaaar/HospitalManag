@@ -23,13 +23,13 @@ class ReceiptAccountController extends Controller
 
     public function create()
     {
-        //
+        return $this->receipt->create();
     }
 
 
     public function store(Request $request)
     {
-        //
+        return $this->receipt->store($request);
     }
 
 

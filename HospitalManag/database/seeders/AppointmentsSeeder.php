@@ -13,21 +13,21 @@ class AppointmentsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('appointments')->delete();
+        // DB::table('appointments')->delete();
         
-        $appointments = [
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday'
-        ];
+        // $appointments = [
+        //     'Monday',
+        //     'Tuesday',
+        //     'Wednesday',
+        //     'Thursday',
+        //     'Friday',
+        //     'Saturday'
+        // ];
 
-        foreach($appointments as $appointment){
-            DB::table('appointments')->insert([
-                'name' => $appointment,
-            ]);
-        }
+        // foreach($appointments as $appointment){
+        //     DB::table('appointments')->insert([
+        //         'name' => $appointment,
+        //     ]);
+        // }
     }
 }
