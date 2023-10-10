@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Models\Admin\FundAccount\FundAccount;
+use App\Models\Admin\PatientAccount\PatientAccount;
 use App\Models\Admin\Section;
 use App\Models\Admin\Service;
 use App\Models\Admin\SingleInvoice\SingleInvoice;
@@ -111,12 +113,13 @@ class SingleInvoices extends Component
                     $single_invoices->type = $this->type;
                     $single_invoices->save();
 
-                    // $fund_accounts = FundAccount::where('invoice_id',$this->single_invoice_id)->first();
-                    // $fund_accounts->date = date('Y-m-d');
-                    // $fund_accounts->invoice_id = $single_invoices->id;
-                    // $fund_accounts->Debit = $single_invoices->total_with_tax;
-                    // $fund_accounts->credit = 0.00;
-                    // $fund_accounts->save();
+                    $fund_accounts = FundAccount::where('invoice_id',$this->single_invoice_id)->first();
+                    $fund_accounts->date = date('Y-m-d');
+                    $fund_accounts->invoice_id = $single_invoices->id;
+                    $fund_accounts->debit = $single_invoices->total_with_tax;
+                    $fund_accounts->credit = 0.00;
+                    $fund_accounts->save();
+
                     $this->InvoiceUpdated = true;
                     $this->show_table = true;
 
@@ -139,12 +142,13 @@ class SingleInvoices extends Component
                     // $single_invoices->invoice_status = 1;
                     $single_invoices->save();
 
-                    // $fund_accounts = new FundAccount();
-                    // $fund_accounts->date = date('Y-m-d');
-                    // $fund_accounts->invoice_id = $single_invoices->id;
-                    // $fund_accounts->Debit = $single_invoices->total_with_tax;
-                    // $fund_accounts->credit = 0.00;
-                    // $fund_accounts->save();
+                    $fund_accounts = new FundAccount();
+                    $fund_accounts->date = date('Y-m-d');
+                    $fund_accounts->invoice_id = $single_invoices->id;
+                    $fund_accounts->debit = $single_invoices->total_with_tax;
+                    $fund_accounts->credit = 0.00;
+                    $fund_accounts->save();
+
                     $this->InvoiceSaved = true;
                     $this->show_table = true;
                 }
@@ -177,13 +181,14 @@ class SingleInvoices extends Component
                     $single_invoices->save();
 
 
-                    // $patient_accounts = PatientAccount::where('invoice_id',$this->single_invoice_id)->first();
-                    // $patient_accounts->date = date('Y-m-d');
-                    // $patient_accounts->invoice_id = $single_invoices->id;
-                    // $patient_accounts->patient_id = $single_invoices->patient_id;
-                    // $patient_accounts->Debit = $single_invoices->total_with_tax;
-                    // $patient_accounts->credit = 0.00;
-                    // $patient_accounts->save();
+                    $patient_accounts = PatientAccount::where('invoice_id',$this->single_invoice_id)->first();
+                    $patient_accounts->date = date('Y-m-d');
+                    $patient_accounts->invoice_id = $single_invoices->id;
+                    $patient_accounts->patient_id = $single_invoices->patient_id;
+                    $patient_accounts->debit = $single_invoices->total_with_tax;
+                    $patient_accounts->credit = 0.00;
+                    $patient_accounts->save();
+
                     $this->InvoiceUpdated = true;
                     $this->show_table = true;
 
@@ -205,13 +210,14 @@ class SingleInvoices extends Component
                     // $single_invoices->invoice_status = 1;
                     $single_invoices->save();
 
-                    // $patient_accounts = new PatientAccount();
-                    // $patient_accounts->date = date('Y-m-d');
-                    // $patient_accounts->invoice_id = $single_invoices->id;
-                    // $patient_accounts->patient_id = $single_invoices->patient_id;
-                    // $patient_accounts->Debit = $single_invoices->total_with_tax;
-                    // $patient_accounts->credit = 0.00;
-                    // $patient_accounts->save();
+                    $patient_accounts = new PatientAccount();
+                    $patient_accounts->date = date('Y-m-d');
+                    $patient_accounts->invoice_id = $single_invoices->id;
+                    $patient_accounts->patient_id = $single_invoices->patient_id;
+                    $patient_accounts->debit = $single_invoices->total_with_tax;
+                    $patient_accounts->credit = 0.00;
+                    $patient_accounts->save();
+                    
                     $this->InvoiceSaved = true;
                     $this->show_table = true;
                 }
