@@ -67,7 +67,9 @@ class ReceiptRepository implements ReceiptRepositoryInterface
     // edit Receipt
     public function edit($id)
     {
-
+        $receipt_accounts = ReceiptAccount::findorfail($id);
+        $Patients = Patient::all();
+        return view('dashboard.receipts.edit', compact('receipt_accounts', 'Patients'));
     }
 
     // show Receipt
@@ -79,7 +81,39 @@ class ReceiptRepository implements ReceiptRepositoryInterface
     // Update Receipt
     public function update($request)
     {
+        DB::beginTransaction();
 
+        try {
+            // store receipt_accounts
+            $receipt_accounts = ReceiptAccount::findorfail($request->id)->first();
+            $receipt_accounts->date = date('y-m-d');
+            $receipt_accounts->patient_id = $request->patient_id;
+            $receipt_accounts->amount = $request->debit;
+            $receipt_accounts->description = $request->description;
+            $receipt_accounts->save();
+            // store fund_accounts
+            $fund_accounts = FundAccount::where('receipt_id', $request->id)->first();
+            $fund_accounts->date = date('y-m-d');
+            $fund_accounts->receipt_id = $receipt_accounts->id;
+            $fund_accounts->debit = $request->debit;
+            $fund_accounts->credit = 0.00;
+            $fund_accounts->save();
+            // store patient_accounts
+            $patient_accounts = PatientAccount::where('receipt_id', $request->id)->first();
+            $patient_accounts->date = date('y-m-d');
+            $patient_accounts->patient_id = $request->patient_id;
+            $patient_accounts->receipt_id = $receipt_accounts->id;
+            $patient_accounts->debit = 0.00;
+            $patient_accounts->credit = $request->debit;
+            $patient_accounts->save();
+
+            DB::commit();
+            session()->flash('edit');
+            return redirect()->route('receipt.index');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     // destroy Receipt
@@ -92,7 +126,7 @@ class ReceiptRepository implements ReceiptRepositoryInterface
 
             return redirect()->back();
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => $e->getMessage]);
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 }

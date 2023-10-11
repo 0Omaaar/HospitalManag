@@ -41,13 +41,13 @@ class ReceiptAccountController extends Controller
 
     public function edit(string $id)
     {
-        //
+        return $this->receipt->edit($id);
     }
 
 
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        return $this->receipt->update($request);
     }
 
 
