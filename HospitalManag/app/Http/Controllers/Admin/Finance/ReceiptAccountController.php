@@ -51,8 +51,8 @@ class ReceiptAccountController extends Controller
     }
 
 
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        return $this->receipt->destroy($request);
     }
 }
