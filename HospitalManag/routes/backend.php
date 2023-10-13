@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Ambulances\AmbulanceController;
+use App\Http\Controllers\Admin\Finance\PaymentController;
 use App\Http\Controllers\Admin\Finance\ReceiptAccountController;
 use App\Http\Controllers\Admin\Insurances\InsuranceController;
 use App\Http\Controllers\Admin\Patients\PatientController;
@@ -46,6 +47,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::view('single_invoices', 'livewire.singleInvoices.index')->name('single_invoices');
 
     Route::resource('receipt', ReceiptAccountController::class);
+
+    Route::resource('payment', PaymentController::class);
 });
 
 require __DIR__ . '/auth.php';
