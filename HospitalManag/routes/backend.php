@@ -46,6 +46,8 @@ Route::middleware(['auth:admin'])->group(function () {
 
     Route::view('single_invoices', 'livewire.singleInvoices.index')->name('single_invoices');
 
+    Route::view('print_single_invoices','livewire.singleInvoices.print')->name('print_single_invoices');
+
     Route::resource('receipt', ReceiptAccountController::class);
 
     Route::resource('payment', PaymentController::class);

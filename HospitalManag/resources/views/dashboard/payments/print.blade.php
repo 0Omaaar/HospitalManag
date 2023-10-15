@@ -1,0 +1,94 @@
+@extends('Dashboard.layouts.master')
+@section('title')
+    Payments
+@stop
+@section('css')
+    <style>
+        @media print {
+            #print_Button {
+                display: none;
+            }
+        }
+    </style>
+@endsection
+@section('page-header')
+    <!-- breadcrumb -->
+    <div class="breadcrumb-header justify-content-between">
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">Payments</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ Print
+                    Payment</span>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+@endsection
+@section('content')
+    <!-- row -->
+    <div class="row row-sm">
+        <div class="col-md-12 col-xl-12">
+            <div class=" main-content-body-invoice" id="print">
+                <div class="card card-invoice">
+                    <div class="card-body">
+                        <div class="invoice-header">
+                            <h1 class="invoice-title">Payments</h1>
+                            <div class="billed-from">
+                                <h6>Informations</h6>
+                                <p>Informations<br>
+                                    Tel No: 011111111<br>
+                                    Email: Hospital@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="row mg-t-20">
+                            <div class="col-md">
+                                <label class="tx-gray-600">Payment Infos</label>
+                                <p class="invoice-info-row"><span>Created At</span>
+                                    <span>{{ $payment_account->date }}</span>
+                                </p>
+                                <p class="invoice-info-row "><span>Patient</span>
+                                    <span>{{ $payment_account->patients->name }}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="table-responsive mg-t-40">
+                            <table class="table table-invoice border text-md-nowrap mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="wd-20p">#</th>
+                                        <th class="wd-40p">Notes</th>
+                                        <th class="tx-center">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="tx-12">{{ $payment_account->description }}</td>
+                                        <td class="tx-center">{{ number_format($payment_account->amount, 2) }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr class="mg-b-40">
+                        <a href="#" class="btn btn-dark float-left mt-3 mr-2" id="print_Button" onclick="printDiv()">
+                            <i class="mdi mdi-printer mr-2"></i>Print
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+@endsection
+@section('js')
+    <script type="text/javascript">
+        function printDiv() {
+            var printContents = document.getElementById('print').innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+            location.reload();
+        }
+    </script>
+@endsection

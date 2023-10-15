@@ -75,7 +75,8 @@ class ReceiptRepository implements ReceiptRepositoryInterface
     // show Receipt
     public function show($id)
     {
-
+        $receipt = ReceiptAccount::findorfail($id);
+        return view('dashboard.receipts.print', compact('receipt'));
     }
 
     // Update Receipt

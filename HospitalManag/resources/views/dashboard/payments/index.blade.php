@@ -58,10 +58,9 @@
                                             <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                                 data-toggle="modal" href="#delete{{ $payment->id }}"><i
                                                     class="las la-trash"></i></a>
-                                            {{-- <a href="{{ route('payment.show', $payment->id) }}"
-                                                class="btn btn-primary btn-sm" target="_blank" title="Print"><i
-                                                    class="fas fa-print"></i></a> --}}
-
+                                            <a href="{{ route('payment.show', $payment->id) }}"
+                                                class="btn btn-dark btn-sm" target="_blank" title="Print"><i
+                                                    class="fas fa-print"></i></a>
                                         </td>
                                     </tr>
                                     @include('dashboard.payments.delete')

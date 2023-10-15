@@ -34,7 +34,7 @@ class PaymentController extends Controller
 
     public function show(string $id)
     {
-        //
+        return $this->payment->show($id);
     }
 
 

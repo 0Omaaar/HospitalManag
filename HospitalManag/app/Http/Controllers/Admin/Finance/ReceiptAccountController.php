@@ -11,7 +11,8 @@ class ReceiptAccountController extends Controller
 
     protected $receipt;
 
-    public function __construct(ReceiptRepositoryInterface $receipt){
+    public function __construct(ReceiptRepositoryInterface $receipt)
+    {
         $this->receipt = $receipt;
     }
 
@@ -35,7 +36,7 @@ class ReceiptAccountController extends Controller
 
     public function show(string $id)
     {
-        //
+        return $this->receipt->show($id);
     }
 
 
