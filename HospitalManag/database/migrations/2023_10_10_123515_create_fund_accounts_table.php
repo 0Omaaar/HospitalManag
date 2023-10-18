@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->foreignId('invoice_id')->nullable()->references('id')->on('single_invoices')->onDelete('cascade');
+            $table->foreignId('group_invoice_id')->nullable()->references('id')->on('group_invoices')->onDelete('cascade');
             $table->foreignId('receipt_id')->nullable()->references('id')->on('receipt_accounts')->onDelete('cascade');
             $table->foreignId('payment_id')->nullable()->references('id')->on('payment_accounts')->onDelete('cascade');
             $table->decimal('debit',8,2)->nullable();
