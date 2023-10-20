@@ -326,8 +326,11 @@
 
                         @if (auth('web')->check())
                             <form method="POST" action="{{ route('logout.user') }}">
-                            @else
-                                <form method="POST" action="{{ route('logout.admin') }}">
+                        @elseif(auth('admin')->check())
+                            <form method="POST" action="{{ route('logout.admin') }}">
+                        @else
+                            <form method="POST" action="{{ route('logout.doctor') }}"
+                            @csrf
                         @endif
                         @csrf
                         <a class="dropdown-item" style="cursor: pointer;"

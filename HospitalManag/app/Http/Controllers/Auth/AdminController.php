@@ -39,7 +39,6 @@ class AdminController extends Controller
             return redirect()->back()->withErrors(['name' => 'Email Or Password invalid !']);
         }
 
-
     }
     /**
      * Display the specified resource.

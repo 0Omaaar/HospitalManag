@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 
 
 
-///////////////ADMIN ROUTEs//////////////////////
+///////////////ADMIN ROUTES//////////////////////
 
 Route::post('login/admin', [AdminController::class, 'store'])->middleware('guest')->name('login.admin');
 Route::post('logout/admin', [AdminController::class, 'destroy'])->middleware('auth:admin')
     ->name('logout.admin');
 
+///////////////DOCTOR ROUTES//////////////////////
+
+Route::post('login/doctor', [\App\Http\Controllers\Auth\DoctorController::class, 'store'])->middleware('guest')->name('login.doctor');
+Route::post('logout/doctor', [\App\Http\Controllers\Auth\DoctorController::class, 'destroy'])->middleware('auth:doctor')
+    ->name('logout.doctor');
 
 
 
