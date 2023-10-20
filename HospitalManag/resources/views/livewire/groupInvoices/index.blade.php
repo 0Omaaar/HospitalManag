@@ -23,7 +23,7 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <livewire:GroupInvoices />
+                    <livewire:group-invoices />
                 </div>
             </div>
         </div>

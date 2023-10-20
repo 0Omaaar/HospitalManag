@@ -98,7 +98,7 @@
                         </div>
                         <hr class="mg-b-40">
                         <a href="#" class="btn btn-danger float-left mt-3 mr-2" id="print_Button"
-                            onclick="printDiv()">
+                           onclick="printDiv()">
                             <i class="mdi mdi-printer ml-1"></i>Print
                         </a>
                     </div>

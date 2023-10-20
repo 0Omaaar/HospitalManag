@@ -22,7 +22,7 @@ class GroupInvoices extends Component
     public $show_table = true;
     public $updateMode = false;
     public $group_invoice_id;
-    public $Group_id;
+    public $group_id;
     public $catchError;
     public $price = 0;
     public $patient_id,$doctor_id,$section_id,$type;
@@ -57,9 +57,10 @@ class GroupInvoices extends Component
 
     public function get_price()
     {
-        $this->price = Group::where('id', $this->Group_id)->first()->total_before_discount;
-        $this->discount_value = Group::where('id', $this->Group_id)->first()->discount_value;
-        $this->tax_rate = Group::where('id', $this->Group_id)->first()->tax_rate;
+        $this->price = Group::where('id', $this->group_id)->first()->total_before_discount;
+        $this->discount_value = Group::where('id', $this->group_id)->first()->discount_value;
+        $this->tax_rate = Group::where('id', $this->group_id)->first()->tax_rate;
+//        return dd($this->price);
     }
 
 
@@ -74,8 +75,8 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->section_id;
-                    $group_invoices->group_id = $this->Group_id;
+                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
+                    $group_invoices->group_id = $this->group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
                     $group_invoices->tax_rate = $this->tax_rate;
@@ -103,8 +104,8 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->section_id;
-                    $group_invoices->group_id = $this->Group_id;
+                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
+                    $group_invoices->group_id = $this->group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
                     $group_invoices->tax_rate = $this->tax_rate;
@@ -121,7 +122,7 @@ class GroupInvoices extends Component
                     $fund_accounts->save();
                     $this->InvoiceSaved =true;
                     $this->show_table =true;
-                    $this->rest();
+//                    $this->rest();
                 }
 
             }
@@ -131,14 +132,15 @@ class GroupInvoices extends Component
                 $this->catchError = $e->getMessage();
             }
 
+
         }
 
 //----------------------------------------------------------------------------------------------------
-        
+
         else{
 
             try {
-                
+
                 if($this->updateMode){
 
                     $group_invoices = GroupInvoice::findorfail($this->group_invoice_id);
@@ -146,8 +148,8 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->section_id;
-                    $group_invoices->group_id = $this->Group_id;
+                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
+                    $group_invoices->group_id = $this->group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
                     $group_invoices->tax_rate = $this->tax_rate;
@@ -176,8 +178,8 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->section_id;
-                    $group_invoices->group_id = $this->Group_id;
+                    $group_invoices->section_id = Section::where('name', $this->section_id)->first()->id;
+                    $group_invoices->group_id = $this->group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
                     $group_invoices->tax_rate = $this->tax_rate;
@@ -216,7 +218,7 @@ class GroupInvoices extends Component
         $this->patient_id = $group_invoices->patient_id;
         $this->doctor_id = $group_invoices->doctor_id;
         $this->section_id = Section::where('id', $group_invoices->section_id)->first()->name;
-        $this->Group_id = $group_invoices->group_id;
+        $this->group_id = $group_invoices->group_id;
         $this->price = $group_invoices->price;
         $this->discount_value = $group_invoices->discount_value;
         $this->tax_rate = $group_invoices->tax_rate;
