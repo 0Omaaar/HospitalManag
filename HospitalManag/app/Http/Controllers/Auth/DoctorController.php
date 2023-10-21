@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class DoctorController extends Controller
 {
 
-    public function store(DoctorLoginRequest $request): RedirectResponse
+    public function store(DoctorLoginRequest $request)
     {
         if ($request->authenticate()) {
             $request->session()->regenerate();

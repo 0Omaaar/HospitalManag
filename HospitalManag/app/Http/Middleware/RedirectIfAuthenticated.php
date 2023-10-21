@@ -10,11 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RedirectIfAuthenticated
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
+
     public function handle($request, Closure $next)
     {
 
@@ -30,6 +26,7 @@ class RedirectIfAuthenticated
 
         if(auth('doctor')->check()){
             return redirect(RouteServiceProvider::DOCTOR);
+//            return "ok";
         }
 
         return $next($request);
