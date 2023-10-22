@@ -6,9 +6,10 @@ use App\Models\Admin\FundAccount\FundAccount;
 use App\Models\Admin\Group;
 use App\Models\Admin\PatientAccount\PatientAccount;
 use App\Models\Admin\Section;
-use App\Models\Admin\SingleInvoice\SingleInvoice;
+//use App\Models\Admin\SingleInvoice\SingleInvoice;
 use App\Models\Doctor;
-use App\Models\GroupInvoice;
+//use App\Models\GroupInvoice;
+use App\Models\Invoice;
 use App\Models\Patient;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,7 @@ class GroupInvoices extends Component
     public function render()
     {
         return view('livewire.groupInvoices.group-invoices', [
-            'group_invoices'=>GroupInvoice::where('type',2)->get(),
+            'group_invoices'=>Invoice::where('invoice_type',2)->get(),
             'Patients'=>Patient::all(),
             'Doctors'=>Doctor::all(),
             'Groups'=>Group::all(),
@@ -70,7 +71,7 @@ class GroupInvoices extends Component
             try {
                 if($this->updateMode){
 
-                    $group_invoices = GroupInvoice::findorfail($this->group_invoice_id);
+                    $group_invoices = Invoice::findorfail($this->group_invoice_id);
                     $group_invoices->invoice_type = 2;
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
@@ -99,7 +100,7 @@ class GroupInvoices extends Component
 
                 else{
 
-                    $group_invoices = new GroupInvoice();
+                    $group_invoices = new Invoice();
                     $group_invoices->invoice_type = 2;
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
@@ -143,7 +144,7 @@ class GroupInvoices extends Component
 
                 if($this->updateMode){
 
-                    $group_invoices = GroupInvoice::findorfail($this->group_invoice_id);
+                    $group_invoices = Invoice::findorfail($this->group_invoice_id);
                     $group_invoices->invoice_type = 2;
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
@@ -173,7 +174,7 @@ class GroupInvoices extends Component
 
                 else{
 
-                    $group_invoices = new GroupInvoice();
+                    $group_invoices = new Invoice();
                     $group_invoices->invoice_type = 2;
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
@@ -213,7 +214,7 @@ class GroupInvoices extends Component
 
         $this->show_table = false;
         $this->updateMode = true;
-        $group_invoices = GroupInvoice::findorfail($id);
+        $group_invoices = Invoice::findorfail($id);
         $this->group_invoice_id = $group_invoices->id;
         $this->patient_id = $group_invoices->patient_id;
         $this->doctor_id = $group_invoices->doctor_id;
@@ -232,13 +233,13 @@ class GroupInvoices extends Component
     }
 
     public function destroy(){
-        GroupInvoice::destroy($this->group_invoice_id);
+        Invoice::destroy($this->group_invoice_id);
         return redirect()->to('/group_invoices');
     }
 
     public function print($id)
     {
-        $group_invoices = GroupInvoice::findorfail($id);
+        $group_invoices = Invoice::findorfail($id);
         return Redirect::route('group_Print_group_invoices',[
             'invoice_date' => $group_invoices->invoice_date,
             'doctor_id' => $group_invoices->Doctor->name,

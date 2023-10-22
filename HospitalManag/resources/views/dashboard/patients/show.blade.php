@@ -107,7 +107,7 @@
                                                         @foreach ($invoices as $invoice)
                                                             <tr>
                                                                 <td>{{ $loop->iteration }}</td>
-                                                                <td>{{ $invoice->service->name }}
+                                                                <td>{{ $invoice->Service->name }}
                                                                 </td>
                                                                 <td>{{ $invoice->invoice_date }}</td>
                                                                 <td>{{ $invoice->total_with_tax }}</td>

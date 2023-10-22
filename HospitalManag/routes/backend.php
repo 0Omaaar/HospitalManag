@@ -53,7 +53,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
     Route::view('print_single_invoices','livewire.singleInvoices.print')->name('print_single_invoices');
 
-    Route::view('group_Print_single_invoices','livewire.groupInvoices.print')->name('group_Print_single_invoices');
+    Route::view('print_group_invoices','livewire.groupInvoices.print')->name('group_Print_group_invoices');
 
     Route::resource('receipt', ReceiptAccountController::class);
 

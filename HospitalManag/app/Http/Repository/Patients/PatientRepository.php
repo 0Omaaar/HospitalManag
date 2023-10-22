@@ -7,6 +7,7 @@ use App\Http\Interfaces\Patients\PatientRepositoryInterface;
 use App\Models\Admin\Finance\ReceiptAccount;
 use App\Models\Admin\PatientAccount\PatientAccount;
 use App\Models\Admin\SingleInvoice\SingleInvoice;
+use App\Models\Invoice;
 use App\Models\Patient;
 use Illuminate\Support\Facades\Hash;
 
@@ -54,7 +55,7 @@ class PatientRepository implements PatientRepositoryInterface
     public function show($id)
     {
         $Patient = Patient::findorfail($id);
-        $invoices = SingleInvoice::where('patient_id', $id)->get();
+        $invoices = Invoice::where('patient_id', $id)->get();
         $receipt_accounts = ReceiptAccount::where('patient_id', $id)->get();
         $Patient_accounts = PatientAccount::where('patient_id', $id)->get();
 
