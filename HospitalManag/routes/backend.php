@@ -23,10 +23,6 @@ Route::get('/dashboard/user', function () {
     return view('dashboard.user.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard.user');
 
-Route::get('/dashboard/doctor', function () {
-    return view('dashboard.doctor.dashboard');
-})->middleware(['auth:doctor', 'verified'])->name('dashboard.doctor');
-
 
 #############################ADMIN ROUTES#############################################
 Route::middleware(['auth:admin'])->group(function () {

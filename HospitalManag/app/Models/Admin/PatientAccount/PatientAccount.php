@@ -5,6 +5,7 @@ namespace App\Models\Admin\PatientAccount;
 use App\Models\Admin\Finance\PaymentAccount;
 use App\Models\Admin\Finance\ReceiptAccount;
 use App\Models\Admin\SingleInvoice\SingleInvoice;
+use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +17,7 @@ class PatientAccount extends Model
 
     public function invoice()
     {
-        return $this->belongsTo(SingleInvoice::class,'invoice_id');
+        return $this->belongsTo(Invoice::class,'invoice_id');
     }
 
     public function ReceiptAccount()

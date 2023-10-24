@@ -107,7 +107,7 @@
                                                         @foreach ($invoices as $invoice)
                                                             <tr>
                                                                 <td>{{ $loop->iteration }}</td>
-                                                                <td>{{ $invoice->Service->name }}
+                                                                <td>{{ $invoice->Service->name ?? $invoice->Group->name}}
                                                                 </td>
                                                                 <td>{{ $invoice->invoice_date }}</td>
                                                                 <td>{{ $invoice->total_with_tax }}</td>
@@ -192,7 +192,7 @@
                                                                 <td>{{ $Patient_account->date }}</td>
                                                                 <td>
                                                                     @if ($Patient_account->invoice_id == true)
-                                                                        {{ $Patient_account->invoice->service->name }}
+                                                                        {{ $Patient_account->invoice->service->name ?? $Patient_account->invoice->Group->name  }}
                                                                     @elseif($Patient_account->receipt_id == true)
                                                                         {{ $Patient_account->ReceiptAccount->description }}
                                                                     @elseif($Patient_account->payment_id == true)
