@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Dashboard\DoctorDashboardController;
 
 Route::get('/dashboard/doctor', function () {
     return view('dashboard.doctor.dashboard');
@@ -10,7 +10,9 @@ Route::get('/dashboard/doctor', function () {
 
 #############################ADMIN ROUTES#############################################
 Route::middleware(['auth:doctor'])->group(function () {
-
+    Route::prefix('doctor')->group(function(){
+       Route::resource('invoices', DoctorDashboardController::class);
+    });
 });
 
 require __DIR__ . '/auth.php';
