@@ -17,4 +17,8 @@ class DoctorDashboardController extends Controller
     public function index(){
         return $this->doctor->index();
     }
+
+    public function completed_invoices(){
+        return $this->doctor->completed_invoices();
+    }
 }

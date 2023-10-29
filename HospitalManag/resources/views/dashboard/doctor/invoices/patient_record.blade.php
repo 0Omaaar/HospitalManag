@@ -21,11 +21,11 @@
                     <div class="vtimeline">
                         @foreach($patient_records as $patient_record)
                             <div
-                                class="timeline-wrapper {{ $loop->first ? '' : 'timeline-inverted' }} timeline-wrapper-primary">
+                                class=" timeline-wrapper {{ $loop->first ? '' : 'timeline-inverted' }}timeline-wrapper-primary">
                                 <div class="timeline-badge"><i class="las la-check-circle"></i></div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
-                                        <h6 class="timeline-title">Art Ramadani posted a status update</h6>
+                                        <h6 class="timeline-title">Lorem</h6>
                                     </div>
                                     <div class="timeline-body">
                                         <p>{{$patient_record->diagnosis}}</p>
@@ -33,7 +33,7 @@
                                     <div class="timeline-footer d-flex align-items-center flex-wrap">
                                         <i class="fas fa-user-md"></i>&nbsp;
                                         <span>{{$patient_record->Doctor->name}}</span>
-                                        <span class="mr-auto"><i class="fe fe-calendar text-muted mr-1"></i>{{$patient_record->date}}</span>
+                                        <span class="mr-auto" style="margin-left: 40%"><i class="fe fe-calendar text-muted mr-1"></i>{{$patient_record->date}}</span>
                                     </div>
                                 </div>
                             </div>
