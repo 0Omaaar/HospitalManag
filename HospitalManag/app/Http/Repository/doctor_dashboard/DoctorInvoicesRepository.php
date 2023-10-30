@@ -18,4 +18,10 @@ class DoctorInvoicesRepository implements \App\Http\Interfaces\doctor_dashboard\
         $invoices = Invoice::where('doctor_id', Auth::user()->id)->where('invoice_status', 3)->get();
         return view('dashboard.doctor.invoices.completed_invoices', compact('invoices'));
     }
+
+    public function review_invoices()
+    {
+        $invoices = Invoice::where('doctor_id', Auth::user()->id)->where('invoice_status', 2)->get();
+        return view('dashboard.doctor.invoices.review_invoices', compact('invoices'));
+    }
 }

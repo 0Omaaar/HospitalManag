@@ -13,6 +13,7 @@ Route::middleware(['auth:doctor'])->group(function () {
     Route::prefix('doctor')->group(function(){
        Route::resource('invoices', DoctorDashboardController::class);
        Route::get('completed_invoices', [DoctorDashboardController::class, 'completed_invoices'])->name('completed_invoices');
+       Route::get('review_invoices', [DoctorDashboardController::class, 'review_invoices'])->name('review_invoices');
        Route::resource('diagnosis', DiagnosisController::class);
     });
 });

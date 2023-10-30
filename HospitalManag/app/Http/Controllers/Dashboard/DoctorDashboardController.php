@@ -9,16 +9,16 @@ use Illuminate\Http\Request;
 class DoctorDashboardController extends Controller
 {
     protected $doctor;
-
     public function __construct(DoctorInvoicesRepositoryInterface $doctor){
         $this->doctor = $doctor;
     }
-
     public function index(){
         return $this->doctor->index();
     }
-
     public function completed_invoices(){
         return $this->doctor->completed_invoices();
+    }
+    public function review_invoices(){
+        return $this->doctor->review_invoices();
     }
 }

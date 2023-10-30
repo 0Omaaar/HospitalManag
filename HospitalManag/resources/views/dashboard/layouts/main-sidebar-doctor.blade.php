@@ -41,6 +41,7 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{route('invoices.index')}}">On Traitment Invoices</a></li>
                     <li><a class="slide-item" href="{{route('completed_invoices')}}">Completed Invoices</a></li>
+                    <li><a class="slide-item" href="{{route('review_invoices')}}">Reviewed Invoices</a></li>
                 </ul>
             </li>
             <li class="slide">
