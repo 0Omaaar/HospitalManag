@@ -19,6 +19,9 @@ class DiagnosisController extends Controller
         return $this->diagnosis->store($request);
     }
 
+    public function add_review(Request $request){
+        return $this->diagnosis->add_review($request);
+    }
     public function show(string $id)
     {
         return $this->diagnosis->show($id);

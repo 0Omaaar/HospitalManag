@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="POST">
+            <form action="{{route('add_review')}}" method="POST">
                 @csrf
                 <div class="modal-body">
 
@@ -26,13 +26,10 @@
                         <textarea class="form-control" name="medicine" rows="6"></textarea>
                     </div>
 
-
                     <div class="form-group" style="position:relative;">
                         <label>Review Date</label>
                         <input class="form-control fc-datepicker" id="review_date" name="review_date" type="text" required>
                     </div>
-
-
 
                 </div>
                 <div class="modal-footer">
