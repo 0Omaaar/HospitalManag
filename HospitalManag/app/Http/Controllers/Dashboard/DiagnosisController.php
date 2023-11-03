@@ -20,7 +20,7 @@ class DiagnosisController extends Controller
     }
 
     public function add_review(Request $request){
-        return $this->diagnosis->add_review($request);
+        return $this->diagnosis->addReview($request);
     }
     public function show(string $id)
     {

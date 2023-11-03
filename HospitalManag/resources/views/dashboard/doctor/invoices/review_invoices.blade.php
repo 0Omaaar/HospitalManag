@@ -51,7 +51,7 @@
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $invoice->invoice_date }}</td>
                                     <td>{{ $invoice->Service->name ?? $invoice->Group->name }}</td>
-                                    <td><a href="{{route('Diagnostics.show',$invoice->patient_id)}}">{{ $invoice->Patient->name }}</a></td>
+                                    <td><a href="{{route('diagnosis.show',$invoice->patient_id)}}">{{ $invoice->Patient->name }}</a></td>
                                     <td>{{ number_format($invoice->price, 2) }}</td>
                                     <td>{{ number_format($invoice->discount_value, 2) }}</td>
                                     <td>{{ $invoice->tax_rate }}%</td>
@@ -73,7 +73,7 @@
                                             <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown" type="button">{{trans('doctors.Processes')}}<i class="fas fa-caret-down mr-1"></i></button>
                                             <div class="dropdown-menu tx-13">
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#add_diagnosis{{$invoice->id}}"><i class="text-primary fa fa-stethoscope"></i>&nbsp;&nbsp;Add Diagnosis</a>
-                                                <a class="dropdown-item" href="#"><i  class="text-warning far fa-file-alt"></i>&nbsp;&nbsp; Add Review </a>
+{{--                                                <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#add_diagnosis{{$invoice->id}}"><i  class="text-warning far fa-file-alt"></i>&nbsp;&nbsp; Add Review </a>--}}
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_password"><i class="text-primary fas fa-x-ray"></i>&nbsp;&nbsp;Convert To Rays</a>
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_status"><i class="text-warning fas fa-syringe"></i>&nbsp;&nbsp;Convert To Labo</a>
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete"><i class="text-danger  ti-trash"></i>&nbsp;&nbsp;Delete Review</a>

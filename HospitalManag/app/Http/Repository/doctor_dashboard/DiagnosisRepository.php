@@ -42,7 +42,7 @@ class DiagnosisRepository implements DiagnosisRepositoryInterface
             $this->invoice_status($request->invoice_id,2);
             $diagnosis = new Diagnostic();
             $diagnosis->date = date('Y-m-d');
-            $diagnosis->review_date = date('Y-m-d H:i:s');
+            $diagnosis->review_date = $request->review_date;
             $diagnosis->diagnosis = $request->diagnosis;
             $diagnosis->medicine = $request->medicine;
             $diagnosis->invoice_id = $request->invoice_id;

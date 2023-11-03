@@ -28,7 +28,7 @@
 
                     <div class="form-group" style="position:relative;">
                         <label>Review Date</label>
-                        <input class="form-control fc-datepicker" id="review_date" name="review_date" type="text" required>
+                        <input class="form-control fc-datepicker" id="review_date" name="review_date" type="datetime-local" required>
                     </div>
 
                 </div>
