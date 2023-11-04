@@ -11,7 +11,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\RayEmployee\RayEmployeeController;
 
 
 ##############################DASHBOARD###########################################
@@ -54,6 +54,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('receipt', ReceiptAccountController::class);
 
     Route::resource('payment', PaymentController::class);
+
+    Route::resource('ray_employee', RayEmployeeController::class);
 });
 
 require __DIR__ . '/auth.php';

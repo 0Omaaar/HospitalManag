@@ -5,20 +5,24 @@ namespace App\Providers;
 use App\Http\Interfaces\Ambulances\AmbulanceRepositoryInterface;
 use App\Http\Interfaces\doctor_dashboard\DiagnosisRepositoryInterface;
 use App\Http\Interfaces\doctor_dashboard\DoctorInvoicesRepositoryInterface;
+use App\Http\Interfaces\doctor_dashboard\RayRepositoryInterface;
 use App\Http\Interfaces\Doctors\DoctorRepositoryInterface;
 use App\Http\Interfaces\Finance\PaymentRepositoryInterface;
 use App\Http\Interfaces\Insurances\InsuranceRepositoryInterface;
 use App\Http\Interfaces\Patients\PatientRepositoryInterface;
+use App\Http\Interfaces\RayEmployee\RayEmployeeRepositoryInterface;
 use App\Http\Interfaces\Sections\SectionRepositoryInterface;
 use App\Http\Interfaces\Service\SingleServiceRepositoryInterface;
 use App\Http\Repository\Ambulances\AmbulanceRepository;
 use App\Http\Repository\doctor_dashboard\DiagnosisRepository;
 use App\Http\Repository\doctor_dashboard\DoctorInvoicesRepository;
+use App\Http\Repository\doctor_dashboard\RayRepository;
 use App\Http\Repository\Doctors\DoctorRepository;
 use App\Http\Repository\Finance\PaymentRepository;
 use App\Http\Repository\Finance\ReceiptRepository;
 use App\Http\Repository\Insurances\InsuranceRepository;
 use App\Http\Repository\Patients\PatientRepository;
+use App\Http\Repository\RayEmployee\RayEmployeeRepository;
 use App\Http\Repository\Sections\SectionRepository;
 use App\Http\Repository\Service\SingleServiceRepository;
 use App\Http\Interfaces\Finance\ReceiptRepositoryInterface;
@@ -41,6 +45,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PaymentRepositoryInterface::class, PaymentRepository::class);
         $this->app->bind(DoctorInvoicesRepositoryInterface::class, DoctorInvoicesRepository::class);
         $this->app->bind(DiagnosisRepositoryInterface::class, DiagnosisRepository::class);
+        $this->app->bind(RayRepositoryInterface::class, RayRepository::class);
+        $this->app->bind(RayEmployeeRepositoryInterface::class, RayEmployeeRepository::class);
     }
 
     /**
