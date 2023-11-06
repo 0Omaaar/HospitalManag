@@ -17,42 +17,20 @@ class RayEmployeeController extends Controller
 
     public function index()
     {
-        //
+        return $this->ray->index();
     }
-
-
-    public function create()
-    {
-        //
-    }
-
 
     public function store(Request $request)
     {
-        //
+        return $this->ray->store($request);
     }
-
-
-    public function show(string $id)
-    {
-        //
-    }
-
-
-    public function edit(string $id)
-    {
-        //
-    }
-
-
     public function update(Request $request, string $id)
     {
-        //
+        return $this->ray->update($request, $id);
     }
-
 
     public function destroy(string $id)
     {
-        //
+        return $this->ray->destroy($id);
     }
 }
