@@ -3,6 +3,7 @@
 namespace App\Http\Repository\doctor_dashboard;
 
 use App\Models\Invoice;
+use App\Models\RayEmployee;
 use Illuminate\Support\Facades\Auth;
 
 class DoctorInvoicesRepository implements \App\Http\Interfaces\doctor_dashboard\DoctorInvoicesRepositoryInterface
@@ -10,7 +11,8 @@ class DoctorInvoicesRepository implements \App\Http\Interfaces\doctor_dashboard\
     public function index()
     {
         $invoices = Invoice::where('doctor_id', Auth::user()->id)->where('invoice_status', 1)->get();
-        return view('dashboard.doctor.invoices.index', compact('invoices'));
+        $ray_employees = RayEmployee::all();
+        return view('dashboard.doctor.invoices.index', compact('invoices', 'ray_employees'));
     }
 
     public function completed_invoices()

@@ -10,7 +10,6 @@ class Ray extends Model
     use HasFactory;
 
     protected $guarded=[];
-
     public function doctor()
     {
         return $this->belongsTo(Doctor::class,'doctor_id');

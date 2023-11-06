@@ -10,8 +10,6 @@
                 </button>
             </div>
             <form action="{{ route('ray_employee.update', $ray_employee->id) }}" method="post">
-{{--                {{ method_field('patch') }}--}}
-{{--                {{ csrf_field() }}--}}
                 @method('patch')
                 @csrf
                 <div class="modal-body">

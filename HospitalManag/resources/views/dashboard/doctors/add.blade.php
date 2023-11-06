@@ -1,19 +1,16 @@
 @extends('dashboard.layouts.master')
 @section('css')
-    <!--Internal Sumoselect css-->
-    <link rel="stylesheet" href="{{ URL::asset('Backdashboard/assets/plugins/sumoselect/sumoselect-rtl.css') }}">
-    <link href="{{ URL::asset('Backdashboard/assets/plugins/notify/css/notifIt.css') }}" rel="stylesheet" />
 
-    <!-- Internal Select2 css -->
-    <link href="{{ URL::asset('Backdashboard/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
-    <!--Internal  Datetimepicker-slider css -->
-    <link href="{{ URL::asset('Backdashboard/assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css') }}"
+    <link rel="stylesheet" href="{{ URL::asset('BackDashboard/assets/plugins/sumoselect/sumoselect-rtl.css') }}">
+    <link href="{{ URL::asset('BackDashboard/assets/plugins/notify/css/notifIt.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('BackDashboard/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
+
+    <link href="{{ URL::asset('BackDashboard/assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css') }}"
         rel="stylesheet">
-    <link href="{{ URL::asset('Backdashboard/assets/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.css') }}"
+    <link href="{{ URL::asset('BackDashboard/assets/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.css') }}"
         rel="stylesheet">
-    <link href="{{ URL::asset('Backdashboard/assets/plugins/pickerjs/picker.min.css') }}" rel="stylesheet">
-    <!-- Internal Spectrum-colorpicker css -->
-    <link href="{{ URL::asset('Backdashboard/assets/plugins/spectrum-colorpicker/spectrum.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('BackDashboard/assets/plugins/pickerjs/picker.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('BackDashboard/assets/plugins/spectrum-colorpicker/spectrum.css') }}" rel="stylesheet">
 
 @section('title')
     Add Doctor

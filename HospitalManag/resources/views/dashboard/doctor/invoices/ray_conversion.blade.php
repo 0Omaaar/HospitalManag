@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="POST">
+            <form action="{{route('rays.store')}}" method="POST">
                 @csrf
                 <div class="modal-body">
 
@@ -19,6 +19,21 @@
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Description</label>
                         <textarea class="form-control" name="description" rows="6"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ray Employee</label><br>
+                        <select class="form-control" name="ray_employee_id">
+                            <option disabled selected>--Choose Ray Employee--</option>
+                            @foreach($ray_employees as $ray_employee)
+                                <option value="{{$ray_employee->id}}">{{$ray_employee->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employee Description</label>
+                        <textarea class="form-control" name="description_employee" rows="3"></textarea>
                     </div>
 
                 </div>

@@ -16,29 +16,15 @@ class DoctorRayController extends Controller
         $this->ray = $ray;
     }
 
-    public function index()
-    {
-        //
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
-
     public function store(Request $request)
     {
-        //
+        return $this->ray->store($request);
     }
-
 
     public function show(string $id)
     {
         //
     }
-
 
     public function edit(string $id)
     {
@@ -48,12 +34,10 @@ class DoctorRayController extends Controller
 
     public function update(Request $request, string $id)
     {
-        //
+        return $this->ray->update($request, $id);
     }
-
-
     public function destroy(string $id)
     {
-        //
+        return $this->ray->destroy($id);
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DoctorDashboardController;
 use App\Http\Controllers\Dashboard\DiagnosisController;
 use App\Http\Controllers\Dashboard\DoctorRayController;
+use App\Http\Controllers\Dashboard\PatientDetailsController;
 Route::get('/dashboard/doctor', function () {
     return view('dashboard.doctor.dashboard');
 })->middleware(['auth:doctor', 'verified'])->name('dashboard.doctor');
@@ -18,6 +19,7 @@ Route::middleware(['auth:doctor'])->group(function () {
        Route::post('add_review', [DiagnosisController::class, 'add_review'])->name('add_review');
        Route::resource('diagnosis', DiagnosisController::class);
        Route::resource('rays', DoctorRayController::class);
+       Route::get('/patient_details/{id}', [PatientDetailsController::class, 'index'])->name('patient_details');
     });
 });
 
