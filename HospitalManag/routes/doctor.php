@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\DoctorDashboardController;
 use App\Http\Controllers\Dashboard\DiagnosisController;
 use App\Http\Controllers\Dashboard\DoctorRayController;
 use App\Http\Controllers\Dashboard\PatientDetailsController;
+use App\Http\Controllers\Dashboard\DoctorLaboratories;
 Route::get('/dashboard/doctor', function () {
     return view('dashboard.doctor.dashboard');
 })->middleware(['auth:doctor', 'verified'])->name('dashboard.doctor');
@@ -20,6 +21,7 @@ Route::middleware(['auth:doctor'])->group(function () {
        Route::resource('diagnosis', DiagnosisController::class);
        Route::resource('rays', DoctorRayController::class);
        Route::get('/patient_details/{id}', [PatientDetailsController::class, 'index'])->name('patient_details');
+       Route::resource('/laboratories', DoctorLaboratories::class);
     });
 });
 
