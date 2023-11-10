@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class DoctorLaboratories extends Controller
 {
-    public function store($request)
+    public function store(Request $request)
     {
         try {
 
@@ -26,7 +26,7 @@ class DoctorLaboratories extends Controller
         }
     }
 
-    public function update($request, $id)
+    public function update(Request $request,string $id)
     {
         try {
             $Laboratorie = Laboratorie::findOrFail($id);
@@ -41,7 +41,7 @@ class DoctorLaboratories extends Controller
         }
     }
 
-    public function destroy($id)
+    public function destroy(string $id)
     {
         try {
             Laboratorie ::destroy($id);

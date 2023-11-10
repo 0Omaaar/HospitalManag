@@ -21,7 +21,7 @@ Route::middleware(['auth:doctor'])->group(function () {
        Route::resource('diagnosis', DiagnosisController::class);
        Route::resource('rays', DoctorRayController::class);
        Route::get('/patient_details/{id}', [PatientDetailsController::class, 'index'])->name('patient_details');
-       Route::resource('/laboratories', DoctorLaboratories::class);
+       Route::resource('laboratories', DoctorLaboratories::class);
     });
 });
 

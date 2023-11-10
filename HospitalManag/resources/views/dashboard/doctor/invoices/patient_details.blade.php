@@ -126,46 +126,46 @@
 
                                         {{-- Start Receipt Patient  --}}
 
-{{--                                        <div class="tab-pane" id="tab3">--}}
-{{--                                            <div class="table-responsive">--}}
-{{--                                                <table class="table table-hover text-md-nowrap text-center">--}}
-{{--                                                    <thead>--}}
-{{--                                                    <tr>--}}
-{{--                                                        <th>#</th>--}}
-{{--                                                        <th>اسم الخدمه</th>--}}
-{{--                                                        <th>اسم الدكتور</th>--}}
-{{--                                                        <th>العمليات</th>--}}
-{{--                                                    </tr>--}}
-{{--                                                    </thead>--}}
-{{--                                                    <tbody>--}}
-{{--                                                    @foreach($patient_Laboratories as $patient_Laboratorie)--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td>{{$loop->iteration}}</td>--}}
-{{--                                                            <td>{{$patient_Laboratorie->description}}</td>--}}
-{{--                                                            <td>{{$patient_Laboratorie->doctor->name}}</td>--}}
+                                        <div class="tab-pane" id="tab3">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover text-md-nowrap text-center">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Description</th>
+                                                        <th>Doctor</th>
+                                                        <th>Processes</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach($patient_Laboratories as $patient_Laboratorie)
+                                                        <tr>
+                                                            <td>{{$loop->iteration}}</td>
+                                                            <td>{{$patient_Laboratorie->description}}</td>
+                                                            <td>{{$patient_Laboratorie->doctor->name}}</td>
 
-{{--                                                            @if($patient_Laboratorie->doctor_id == auth()->user()->id)--}}
-{{--                                                                @if($patient_Laboratorie->case == 0)--}}
-{{--                                                                    <td>--}}
-{{--                                                                        <a class="modal-effect btn btn-sm btn-primary" data-effect="effect-scale"  data-toggle="modal" href="#edit_xray_conversion{{$patient_Laboratorie->id}}"><i class="fas fa-edit"></i></a>--}}
-{{--                                                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$patient_Laboratorie->id}}"><i class="las la-trash"></i></a>--}}
-{{--                                                                    </td>--}}
-{{--                                                                @else--}}
-{{--                                                                    <td>--}}
-{{--                                                                        <a class="modal-effect btn btn-sm btn-warning"  href="{{route('show.laboratorie',$patient_Laboratorie->id)}}"><i class="fas fa-binoculars"></i></a>--}}
-{{--                                                                    </td>--}}
+                                                            @if($patient_Laboratorie->doctor_id == auth()->user()->id)
+                                                                @if($patient_Laboratorie->case == 0)
+                                                                    <td>
+                                                                        <a class="modal-effect btn btn-sm btn-primary" data-effect="effect-scale"  data-toggle="modal" href="#edit_laboratorie_conversion{{$patient_Laboratorie->id}}"><i class="fas fa-edit"></i></a>
+                                                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$patient_Laboratorie->id}}"><i class="las la-trash"></i></a>
+                                                                    </td>
+                                                                @else
+                                                                    <td>
+                                                                        <a class="modal-effect btn btn-sm btn-warning"  href=""><i class="fas fa-binoculars"></i></a>
+                                                                    </td>
 
-{{--                                                                @endif--}}
-{{--                                                            @endif--}}
+                                                                @endif
+                                                            @endif
 
-{{--                                                        </tr>--}}
-{{--                                                        @include('dashboard.doctor.invoices.edit_laboratorie_conversion')--}}
-{{--                                                        @include('dashboard.doctor.invoices.delete_laboratorie')--}}
-{{--                                                    @endforeach--}}
-{{--                                                    </tbody>--}}
-{{--                                                </table>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                                        </tr>
+                                                        @include('dashboard.doctor.invoices.edit_laboratorie_conversion')
+                                                        @include('dashboard.doctor.invoices.delete_laboratorie')
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
