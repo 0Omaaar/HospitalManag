@@ -16,17 +16,18 @@ class RedirectIfAuthenticated
 
         if (auth('web')->check()) {
             return redirect(RouteServiceProvider::HOME);
-            // return "user";
         }
 
         if (auth('admin')->check()) {
             return redirect(RouteServiceProvider::ADMIN);
-            // return "admin";
         }
 
         if(auth('doctor')->check()){
             return redirect(RouteServiceProvider::DOCTOR);
-//            return "ok";
+        }
+
+        if(auth('ray_employee')->check()){
+            return redirect(RouteServiceProvider::RAY_EMPLOYEE);
         }
 
         return $next($request);

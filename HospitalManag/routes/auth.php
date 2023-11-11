@@ -27,6 +27,12 @@ Route::post('logout/doctor', [\App\Http\Controllers\Auth\DoctorController::class
     ->name('logout.doctor');
 
 
+///////////////RAYEMPLOYEE ROUTES//////////////////////
+
+Route::post('login/ray_employee', [\App\Http\Controllers\Auth\RayEmployeeController::class, 'store'])->middleware('guest')->name('login.ray_employee');
+Route::post('logout/ray_employee', [\App\Http\Controllers\Auth\RayEmployeeController::class, 'destroy'])->middleware('auth:ray_employee')
+    ->name('logout.ray_employee');
+
 
 
 
