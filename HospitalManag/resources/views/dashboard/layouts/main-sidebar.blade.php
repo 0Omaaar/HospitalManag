@@ -14,6 +14,16 @@
                 src="{{ URL::asset('backDashboard/assets/img/brand/favicon-white.png') }}" class="logo-icon dark-theme"
                 alt="logo"></a>
     </div>
-    @include('dashboard.layouts.main-sidebar.admin-sidebar')
+    @if(\Auth::guard('admin')->check())
+        @include('dashboard.layouts.main-sidebar.admin-sidebar')
+    @endif
+
+    @if(\Auth::guard('doctor')->check())
+        @include('dashboard.layouts.main-sidebar.main-sidebar-doctor')
+    @endif
+
+    @if(\Auth::guard('ray_employee')->check())
+        @include('dashboard.layouts.main-sidebar.ray_employee-sidebar')
+    @endif
 </aside>
 <!-- main-sidebar -->
