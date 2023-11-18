@@ -58,7 +58,7 @@
                                             <div class="dropdown">
                                                 <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown" type="button">Processes<i class="fas fa-caret-down mr-1"></i></button>
                                                 <div class="dropdown-menu tx-13">
-                                                    <a class="dropdown-item" href=""><i class="text-primary fa fa-stethoscope"></i>&nbsp;&nbsp; Add Diagnostic </a>
+                                                    <a class="dropdown-item" href="{{route('invoices.edit', $invoice->id)}}"><i class="text-primary fa fa-stethoscope"></i>&nbsp;&nbsp;Add Diagnostic</a>
                                                 </div>
                                             </div>
                                         </td>

@@ -10,9 +10,7 @@ Route::get('/dashboard/ray_employee', function () {
 
 #############################Ray employee ROUTES#############################################
 Route::middleware(['auth:ray_employee'])->group(function () {
-
-        Route::get('invoices', [InvoicesController::class, 'index'])->name('invoices.index');
-
+    Route::resource('invoices', InvoicesController::class);
 });
 
 require __DIR__ . '/auth.php';
