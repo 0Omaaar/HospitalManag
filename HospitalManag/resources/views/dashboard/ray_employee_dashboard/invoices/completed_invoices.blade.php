@@ -1,10 +1,8 @@
-@extends('dashboard.layouts.master')
+@extends('Dashboard.layouts.master')
 @section('title')
-    X-Rays
+     Completed Invoices
 @stop
 @section('css')
-    <link href="{{URL::asset('backDashboard/assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet" />
-    <link href="{{URL::asset('backDashboard/assets/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('backDashboard/assets/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
 @endsection
     @section('page-header')
@@ -12,7 +10,7 @@
         <div class="breadcrumb-header justify-content-between">
             <div class="my-auto">
                 <div class="d-flex">
-                    <h4 class="content-title mb-0 my-auto">X-Rays</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ Invoices</span>
+                    <h4 class="content-title mb-0 my-auto">Completed Invoices</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ Invoices</span>
                 </div>
             </div>
         </div>
@@ -20,7 +18,8 @@
     @endsection
     @section('content')
         @include('Dashboard.messages_alert')
-
+        <!-- row -->
+        <!-- row opened -->
         <div class="row row-sm">
             <div class="col-xl-12">
                 <div class="card">
@@ -43,7 +42,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration}}</td>
                                         <td>{{ $invoice->created_at }}</td>
-                                        <td>{{ $invoice->Patient->name }}</td>
+                                        <td><a href="{{route('invoices.show', $invoice->id)}}">{{ $invoice->Patient->name }}</a></td>
                                         <td>{{ $invoice->doctor->name }}</td>
                                         <td>{{ $invoice->description }}</td>
                                         <td>
@@ -53,12 +52,11 @@
                                                 <span class="badge badge-success">Completed</span>
                                             @endif
                                         </td>
-
                                         <td>
                                             <div class="dropdown">
                                                 <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown" type="button">Processes<i class="fas fa-caret-down mr-1"></i></button>
                                                 <div class="dropdown-menu tx-13">
-                                                    <a class="dropdown-item" href="{{route('invoices.edit', $invoice->id)}}"><i class="text-primary fa fa-stethoscope"></i>&nbsp;&nbsp;Add Diagnostic</a>
+                                                    <a class="dropdown-item" href="{{route('invoices.edit',$invoice->id)}}"><i class="text-primary fa fa-stethoscope"></i>&nbsp;&nbsp;Add Diagnosis </a>
                                                 </div>
                                             </div>
                                         </td>
@@ -70,9 +68,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     @endsection
     @section('js')
 

@@ -16,6 +16,11 @@ class InvoicesController extends Controller
         return view('dashboard.ray_employee_dashboard.invoices.index',compact('invoices'));
     }
 
+    public function completed_invoices(){
+        $invoices = Ray::where('case',1)->get();
+        return view('dashboard.ray_employee_dashboard.invoices.completed_invoices',compact('invoices'));
+    }
+
 
     public function create()
     {
@@ -31,7 +36,8 @@ class InvoicesController extends Controller
 
     public function show(string $id)
     {
-        //
+        $rays = Ray::findorfail($id);
+        return view('dashboard.ray_employee_dashboard.invoices.patient_details', compact('rays'));
     }
 
 
