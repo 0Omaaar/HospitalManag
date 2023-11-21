@@ -17,7 +17,7 @@ class InvoicesController extends Controller
     }
 
     public function completed_invoices(){
-        $invoices = Ray::where('case',1)->get();
+        $invoices = Ray::where('case',1)->where('employee_id', auth()->user()->id)->get();
         return view('dashboard.ray_employee_dashboard.invoices.completed_invoices',compact('invoices'));
     }
 
@@ -37,6 +37,11 @@ class InvoicesController extends Controller
     public function show(string $id)
     {
         $rays = Ray::findorfail($id);
+
+        if($rays->doctor_id != auth()->user()->id){
+            abort(404);
+        }
+
         return view('dashboard.ray_employee_dashboard.invoices.patient_details', compact('rays'));
     }
 
