@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->foreignId('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
+            $table->foreignId('laboratorie_employee_id')->references('id')->on('laboratorie_employees')->onDelete('cascade');
             $table->timestamps();
         });
     }

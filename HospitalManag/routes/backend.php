@@ -56,6 +56,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('payment', PaymentController::class);
 
     Route::resource('ray_employee', RayEmployeeController::class);
+
+    Route::resource('laboratorie_employee', \App\Http\Controllers\LaboratorieEmployeeController::class);
 });
 
 require __DIR__ . '/auth.php';
