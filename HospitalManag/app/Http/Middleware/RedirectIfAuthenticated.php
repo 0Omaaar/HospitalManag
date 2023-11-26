@@ -30,6 +30,10 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::RAY_EMPLOYEE);
         }
 
+        if(auth('laboratorie_employee')->check()){
+            return redirect(RouteServiceProvider::LABORATORIE_EMPLOYEE);
+        }
+
         return $next($request);
     }
 }

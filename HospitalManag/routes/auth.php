@@ -34,6 +34,13 @@ Route::post('logout/ray_employee', [\App\Http\Controllers\Auth\RayEmployeeContro
     ->name('logout.ray_employee');
 
 
+///////////////LABORATORIE ROUTES//////////////////////
+
+Route::post('login/laboratorie_employee', [\App\Http\Controllers\Auth\LaboratorieEmployeeController::class, 'store'])->middleware('guest')->name('login.laboratorie_employee');
+Route::post('logout/laboratorie_employee', [\App\Http\Controllers\Auth\LaboratorieEmployeeController::class, 'destroy'])->middleware('auth:laboratorie_employee')
+    ->name('logout.laboratorie_employee');
+
+
 
 
 
