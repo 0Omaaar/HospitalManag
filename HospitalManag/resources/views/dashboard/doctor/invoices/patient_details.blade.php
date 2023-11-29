@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.master-doctor')
+    @extends('dashboard.layouts.master-doctor')
 @section('css')
     <link href="{{URL::asset('backDashboard/assets/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
 @endsection

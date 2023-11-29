@@ -21,6 +21,16 @@
                         <textarea class="form-control" name="description" rows="6"></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label>Labo Employee</label><br>
+                        <select class="form-control" name="laboratorie_employee_id">
+                            <option disabled selected>--Choose Labo Employee--</option>
+                            @foreach($laboratorie_employees as $laboratorie_employee)
+                                <option value="{{$laboratorie_employee->id}}">{{$laboratorie_employee->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

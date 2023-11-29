@@ -17,6 +17,7 @@ class DoctorLaboratories extends Controller
                 'invoice_id'=>$request->invoice_id,
                 'patient_id'=>$request->patient_id,
                 'doctor_id'=>$request->doctor_id,
+                'laboratorie_employee_id'=>$request->laboratorie_employee_id
             ]);
             session()->flash('add');
             return redirect()->back();
