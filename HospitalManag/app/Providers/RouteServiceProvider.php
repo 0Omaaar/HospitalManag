@@ -27,6 +27,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public const LABORATORIE_EMPLOYEE = '/dashboard/laboratorie_employee';
 
+    public const PATIENT = '/dashboard/patient';
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
@@ -55,6 +57,9 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/laboratorie_employee.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/patient.php'));
         });
     }
 }

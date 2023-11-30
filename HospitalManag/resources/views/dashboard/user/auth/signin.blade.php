@@ -245,6 +245,42 @@
                                                                 an Account</a></p>
                                                     </div>
                                                 </div>
+                                                {{-- Patient form --}}
+                                                <div class="panel" id="patient">
+                                                    <h5 class="font-weight-semibold mb-4">Please sign in to continue as Patient</h5>
+                                                    <form action="{{ route('login.patient') }}" method="POST"
+                                                          autocomplete="off">
+                                                        @csrf
+                                                        <div class="form-group">
+                                                            <label>Email</label> <input name="email" class="form-control"
+                                                                                        placeholder="Enter your email" type="email"
+                                                                                        :value="old('email')" required autofocus>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Password</label> <input name="password"
+                                                                                           class="form-control" placeholder="Enter your password"
+                                                                                           type="password" :value="old('password')">
+                                                        </div><button class="btn btn-main-primary btn-block"
+                                                                      type="submit">Sign In</button>
+                                                        <div class="row row-xs">
+                                                            <div class="col-sm-6">
+                                                                <button class="btn btn-block"><i
+                                                                        class="fab fa-facebook-f"></i> Signup with
+                                                                    Facebook</button>
+                                                            </div>
+                                                            <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                                                                <button class="btn btn-info btn-block"><i
+                                                                        class="fab fa-twitter"></i> Signup with
+                                                                    Twitter</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <div class="main-signin-footer mt-5">
+                                                        <p><a href="">Forgot password?</a></p>
+                                                        <p>Don't have an account? <a href="{{ route('register') }}">Create
+                                                                an Account</a></p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
