@@ -12,7 +12,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-
+///////////////PATIENT ROUTES//////////////////////
+Route::post('login/patient', [\App\Http\Controllers\Auth\PatientController::class, 'store'])->middleware('guest')->name('login.patient');
+Route::post('logout/patient', [\App\Http\Controllers\Auth\PatientController::class, 'destroy'])->middleware('auth:patient')
+    ->name('logout.patient');
 
 ///////////////ADMIN ROUTES//////////////////////
 
@@ -40,10 +43,7 @@ Route::post('login/laboratorie_employee', [\App\Http\Controllers\Auth\Laboratori
 Route::post('logout/laboratorie_employee', [\App\Http\Controllers\Auth\LaboratorieEmployeeController::class, 'destroy'])->middleware('auth:laboratorie_employee')
     ->name('logout.laboratorie_employee');
 
-///////////////PATIENT ROUTES//////////////////////
-Route::post('login/patient', [\App\Http\Controllers\Auth\PatientController::class, 'store'])->middleware('guest')->name('login.patient');
-Route::post('logout/patient', [\App\Http\Controllers\Auth\PatientController::class, 'destroy'])->middleware('auth:patient')
-    ->name('logout.patient');
+
 
 
 Route::middleware('guest')->group(function () {

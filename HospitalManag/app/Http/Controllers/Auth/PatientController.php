@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\PatientLoginRequest;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PatientController extends Controller
 {
-    public function store(PatientLoginRequest $request)
+    public function store(PatientLoginRequest $request): RedirectResponse
     {
         if ($request->authenticate()) {
             $request->session()->regenerate();
