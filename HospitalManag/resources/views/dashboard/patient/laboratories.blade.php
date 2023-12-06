@@ -45,10 +45,10 @@
                                     <td>{{$laboratorie->description}}</td>
                                     <td>{{$laboratorie->doctor->name}}</td>
                                     <td>{{$laboratorie->employee->name}}</td>
-                                    <td>{{$laboratorie->description_employee}}</td>
+                                    <td>{{$laboratorie->description}}</td>
                                     <td>
-                                        @if($laboratorie->employee_id !== null)
-                                            <a class="btn btn-primary btn-sm" href="" role="button">Show Labo Result</a>
+                                        @if($laboratorie->laboratorie_employee_id !== null)
+                                            <a class="btn btn-primary btn-sm" href="{{route('laboratories.view', $laboratorie->id)}}" role="button">Show Labo Result</a>
                                         @endif                                                   </td>
                                 </tr>
                             @endforeach

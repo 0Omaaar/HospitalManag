@@ -21,4 +21,13 @@ class Laboratorie extends Model
     public function patient(){
         return $this->belongsTo(Patient::class, 'patient_id');
     }
+
+        public function employee(){
+        return $this->belongsTo(LaboratorieEmployee::class, 'patient_id');
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }
