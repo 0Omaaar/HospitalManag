@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PatientDashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Finance\ReceiptAccount;
 use App\Models\Invoice;
 use App\Models\Laboratorie;
 use App\Models\Ray;
@@ -42,5 +43,11 @@ class PatientController extends Controller
             abort(404);
         }
         return view('dashboard.ray_employee_dashboard.invoices.patient_details', compact('rays'));
+    }
+
+    public function payments(){
+
+        $payments = ReceiptAccount::where('patient_id',auth()->user()->id)->get();
+        return view('dashboard.patient.payments',compact('payments'));
     }
 }

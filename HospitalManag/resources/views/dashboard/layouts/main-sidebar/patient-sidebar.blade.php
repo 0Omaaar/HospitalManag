@@ -32,6 +32,7 @@
                     <li><a class="slide-item" href="{{route('invoices.patient')}}">Invoices</a></li>
                     <li><a class="slide-item" href="{{route('laboratories.patient')}}">Laboratories</a></li>
                     <li><a class="slide-item" href="{{route('rays.patient')}}">Rays</a></li>
+                    <li><a class="slide-item" href="{{route('payments.patient')}}">Payments</a></li>
                 </ul>
             </li>
 

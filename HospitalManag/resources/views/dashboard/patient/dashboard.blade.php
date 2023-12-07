@@ -47,7 +47,7 @@
                     <div class="pb-0 mt-0">
                         <div class="d-flex">
                             <div class="">
-                                <h4 class="tx-20 font-weight-bold mb-1 text-white"><a style="color: white" href="">{{App\Models\Admin\PatientAccount\PatientAccount::where('patient_id',auth()->user()->id)->sum('credit')}}</a> </h4>
+                                <h4 class="tx-20 font-weight-bold mb-1 text-white"><a style="color: white" href="{{route('payments.patient', )}}">{{App\Models\Admin\PatientAccount\PatientAccount::where('patient_id',auth()->user()->id)->sum('credit')}}</a> </h4>
                             </div>
                         </div>
                     </div>
