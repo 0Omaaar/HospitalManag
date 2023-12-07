@@ -13,6 +13,8 @@ Route::middleware(['auth:patient'])->group(function () {
     Route::get('/patientt/invoices', [PatientController::class, 'invoices'])->name('invoices.patient');
     Route::get('/patientt/laboratories', [PatientController::class,'laboratories'])->name('laboratories.patient');
     Route::get('/patientt/view_laboratories/{id}', [PatientController::class,'viewLaboratories'])->name('laboratories.view');
+    Route::get('/patientt/rays', [PatientController::class, 'rays'])->name('rays.patient');
+    Route::get('/patientt/view_rays/{id}', [PatientController::class,'viewRays'])->name('rays.view');
 });
 
 require __DIR__ . '/auth.php';
